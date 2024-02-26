@@ -19,7 +19,7 @@ async function writeBts() {
     console.log (`diocai ${bts_list.body}`);
     bts_json = await bts_list.json();
     for (bts in bts_json){
-        console.log(`ciaone ${bts['lat']}`);
-        //var marker = L.marker([bts['lat'], bts['lng']]).addTo(map);
+        console.log(`ciaone ${bts[bts]['lat']}`);
+        var marker = L.marker([bts['lat'], bts['lng']]).addTo(map);
     }
 }
