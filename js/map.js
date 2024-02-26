@@ -17,7 +17,7 @@ async function writeBts() {
     console.log (bts_list)
     bts_json = await bts_list.json()
     for (bts in bts_json){
-        console.log(bts);
-        var marker = L.marker([bts['lat'], bts['lng']]).addTo(map);
+        console.log(`ciaone ${bts}`);
+        //var marker = L.marker([bts['lat'], bts['lng']]).addTo(map);
     }
 }
