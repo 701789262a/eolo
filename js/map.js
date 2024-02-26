@@ -21,5 +21,7 @@ async function writeBts() {
     for (bts in bts_json){
         console.log(`ciaone ${bts_json[bts]['lat']}`);
         var marker = L.marker([bts_json[bts]['lat'], bts_json[bts]['lng']]).addTo(map);
+        var popup = marker.bindPopup(`geggiu ${bts_json[bts]['lat']}`).addTo(map);
+        
     }
 }
