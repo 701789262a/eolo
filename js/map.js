@@ -4,8 +4,20 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 });
 osm.addTo(map);
-fetch("lista_bts.json")
-                .then((res) => {for (bts in res){
-                    console.log(bts);
-                    //var marker = L.marker([bts['lat'], bts['lng']]).addTo(map);
-                }});
+writeBts();
+
+
+async function writeBts() {
+    var bts_list = await fetch("http://eolo.zeromist.net/lista_bts.json",
+                    {mode: "cors", method:"GET",headers: { 
+                        "Content-Type": "application/json",
+                        },
+                    }
+            );
+    console.log (bts_list)
+    bts_json = await bts_list.json()
+    for (bts in bts_json){
+        console.log(bts);
+        var marker = L.marker([bts['lat'], bts['lng']]).addTo(map);
+    }
+}
