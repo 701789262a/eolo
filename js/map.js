@@ -4,7 +4,7 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 });
 osm.addTo(map);
-console.log("porcodfffdio");
+console.log("porcodfffdioueue");
 writeBts();
 
 
