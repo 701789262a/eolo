@@ -7,5 +7,5 @@ osm.addTo(map);
 fetch("lista_bts.json")
                 .then((res) => {for (bts in res){
                     console.log(bts);
-                    var marker = L.marker([bts['lat'], bts['lng']]).addTo(map);
+                    //var marker = L.marker([bts['lat'], bts['lng']]).addTo(map);
                 }});
