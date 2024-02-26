@@ -4,7 +4,7 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 });
 osm.addTo(map);
-fetch("./lista_bts.json")
+fetch("lista_bts.json")
                 .then((res) => {for (bts in res){
                     console.log(bts);
                     var marker = L.marker([bts['lat'], bts['lng']]).addTo(map);
