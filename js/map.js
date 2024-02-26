@@ -8,6 +8,7 @@ writeBts();
 
 
 async function writeBts() {
+  console.log("porcoddio");
     var bts_list = await fetch("http://eolo.zeromist.net/lista_bts.json",
                     {mode: "cors", method:"GET",headers: { 
                         "Content-Type": "application/json",
