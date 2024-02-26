@@ -14,7 +14,7 @@ async function writeBts() {
                         },
                     }
             );
-    console.log (bts_list)
+    console.log (bts_list.body)
     bts_json = await bts_list.json()
     for (bts in bts_json){
         console.log(`ciaone ${bts}`);
