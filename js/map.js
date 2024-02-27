@@ -48,8 +48,7 @@ async function getSectors(bts_name){
 async function onClick(e) {
     var imageUrl = `https://eolo.zeromist.net/images/${this.options.name.toLowerCase()}.png`;
     console.log(imageUrl);
-    c=1.01
-    var latLngBounds = L.latLngBounds([[this.options.sup_dx_lat*c, this.options.inf_sx_lng*c], [this.options.inf_sx_lat*c,this.options.sup_dx_lng*c]]);
+    var latLngBounds = L.latLngBounds([[this.options.sup_dx_lat, this.options.inf_sx_lng], [this.options.inf_sx_lat,this.options.sup_dx_lng]]);
     var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
         opacity: 0.8,
         errorOverlayUrl: "https://cdn-icons-png.flaticon.com/512/110/110686.png",
