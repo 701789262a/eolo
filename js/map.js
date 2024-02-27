@@ -1,6 +1,6 @@
 
 
-var map = L.map('map').setView([41.9, 12.5], 10);
+var map = L.map('map').setView([40.96155, 8.872], 10);
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -22,10 +22,6 @@ async function writeBts() {
         var marker = L.marker([bts_json[bts]['lat'], bts_json[bts]['lng']], {
             name: bts_json[bts]['nome'],
             tecno: bts_json[bts]['tech_string'],
-            inf_sx_lat: bts_json[bts]['inf_sx_lat'],
-            inf_sx_lng: bts_json[bts]['inf_sx_lng'],
-            sup_dx_lat: bts_json[bts]['sup_dx_lat'],
-            sup_dx_lng: bts_json[bts]['sup_dx_lng']
         }).addTo(map).on('click', onClick);
         var popup = marker.bindPopup(`${bts_json[bts]['nome']}`).addTo(map);
 
@@ -53,13 +49,15 @@ async function onClick(e) {
         })
         .then(function (arrayBuffer) {
             parseGeoraster(arrayBuffer).then(function (georaster) {
-                var scale = chroma.scale(["darkblue", "lightblue"]).domain([0, 100]);
+                var scale = chroma.scale(["blue","green","yellow", "red"]).domain([-20, 100]);
                 var layer = new GeoRasterLayer({
+                    
+              opacity: 0.5,
                     georaster: georaster,
                     resolution: 512,
                     pixelValuesToColorFn: function (values) {
                       const value = values[0];
-                      if (value < 0) return "rgb(25, 25, 25)";
+                      if (value < -10) return "rgb(25, 25, 25)";
                       return scale(value).hex();
                     }
                   });
@@ -69,15 +67,7 @@ async function onClick(e) {
             })
         });
 
-    var imageUrl = `https://eolo.zeromist.net/images/${this.options.name.toLowerCase()}.png`;
-    console.log(imageUrl);
-    var latLngBounds = L.latLngBounds([[this.options.sup_dx_lat, this.options.inf_sx_lng], [this.options.inf_sx_lat, this.options.sup_dx_lng]]);
-    var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
-        opacity: 0.8,
-        errorOverlayUrl: "https://cdn-icons-png.flaticon.com/512/110/110686.png",
-        alt: "affammoc",
-        interactive: true
-    }).addTo(map);
+    
 
     sesso = await getSectors(this.options.name);
 
