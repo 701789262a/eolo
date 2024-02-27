@@ -21,6 +21,27 @@ body {
     margin: 0;
     padding: 0;
 }
+.listrightmenu{
+    justify-content: right;
+}
+.rightmenu{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19;
+    color: aliceblue;
+    z-index: 900;
+    align-items: right;
+    justify-content: center;
+    right:10;
+    top: 170;
+    width: 250px;
+    height: 400px;
+    background: hwb(0 34% 66% / 0.705);
+    display:flex;
+    border-radius: 19px ;
+    position:fixed;
+    padding: 10px;
+    align-items: right;
+}
 .menu {
     z-index: 900;
     align-items: center;
@@ -39,3 +60,21 @@ body {
     width: 100%;  padding-top: 10px;   background: #2E2E2E; justify-content: center; display:flex;
 }
 #map { min-width: 80%; height: 900px;}
+* {
+    box-sizing: border-box;
+}
+.container {
+    width:100%;
+    max-width:600px;
+    border:2px;
+    margin: 0 auto;
+    padding:2px;
+}
+
+.col2 {
+    width:49%;
+    float:left;
+    margin-right:2%;  
+    height: 10%;  
+}
+.col2:last-child {margin-right:0;  }

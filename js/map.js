@@ -21,9 +21,14 @@ async function writeBts() {
     console.log (`diocai ${bts_list.body}`);
     bts_json = await bts_list.json();
     for (bts in bts_json){
-        console.log(`ciaone ${bts_json[bts]['lat']}`);
-        var marker = L.marker([bts_json[bts]['lat'], bts_json[bts]['lng']]).addTo(map);
+        var marker = L.marker([bts_json[bts]['lat'], bts_json[bts]['lng']]).addTo(map).on('click',onClick);
         var popup = marker.bindPopup(`geggiu ${bts_json[bts]['lat']}`).addTo(map);
         
     }
+}
+
+function onClick(e) {
+    console.log(e.latlng);
+    document.getElementById('lat').innerHTML= `<p>${e.latlng['lat']}</p>`;
+    document.getElementById('lng').innerHTML= `<p>${e.latlng['lng']}</p>`;
 }
