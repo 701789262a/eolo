@@ -8,7 +8,6 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 osm.addTo(map);
 writeBts();
 
-var prova_sec = [{"0": {"0": [26.56505117711001, 36.86989764585428], "1": [53.13010235420208, 0], "2": [69.4439547804161, 0], "3": [95.1944289077272, 119.74488129695602], "4": [153.43494882287078, 153.434948822922], "5": [180.0, 0], "6": [198.4349488229028, 0], "7": [210.96375653207073, 0], "8": [236.30993247403006, 270.000000000064], "9": [285.2551187030364, 292.6198649480465]}}, {"1": {}}, {"2": {"0": [0.0, 360]}}]
 async function writeBts() {
     var bts_list = await fetch("https://eolo.zeromist.net/lista_bts.json",
         {
@@ -19,19 +18,31 @@ async function writeBts() {
     );
     bts_json = await bts_list.json();
     for (bts in bts_json) {
+        
         var marker = L.marker([bts_json[bts]['lat'], bts_json[bts]['lng']], {
              name: bts_json[bts]['nome'],
-             sectors:  prova_sec,
              tecno: bts_json[bts]['tech_string']
             }).addTo(map).on('click', onClick);
         var popup = marker.bindPopup(`${bts_json[bts]['nome']}`).addTo(map);
 
     }
 }
-
+async function getSectors(bts_name){
+    var sectors = await fetch(`https://eolo.zeromist.net/sectors/${bts_name}_sectors`,
+        {
+            mode: "cors", method: "GET", headers: {
+                "Content-Type": "application/json",
+            },
+        }
+        );
+    sec = sectors.json();
+    console.log(sec);
+    return sec
+}
 function onClick(e) {
+    sectors = getSectors(this.options.name);
     tecnos_filtered =[]
-    tecnos = getSectorCoverage();
+    tecnos = getSectorCoverage(sectors);
     for (let i = 0; i < Object.keys(tecnos).length; i++){
         if (!tecnos[i].includes("tecno 0")){
             tecnos_filtered.push(tecnos[i]);
@@ -45,7 +56,7 @@ function onClick(e) {
     document.getElementById('tecno').innerHTML = `<p>${this.options.tecno}</p>`;
 }
 
-function getSectorCoverage(){
+function getSectorCoverage(prova_sec){
     var tecnos = []
     for (let i = 0 ; i < 3; i++){
         try{
