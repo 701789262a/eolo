@@ -42,6 +42,15 @@ async function getSectors(bts_name){
     return sekt;
 }
 async function onClick(e) {
+    var imageUrl = `https://eolo.zeromist.net/images/${this.options.name}.png`;
+    var latLngBounds = L.latLngBounds([[45, 8], [44.9,8.1]]);
+    var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
+        opacity: 0.8,
+        errorOverlayUrl: errorOverlayUrl,
+        alt: altText,
+        interactive: true
+    }).addTo(map);
+    
     sesso = await getSectors(this.options.name);
 
     console.log(sesso);
