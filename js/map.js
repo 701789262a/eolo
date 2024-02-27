@@ -49,7 +49,7 @@ async function onClick(e) {
         })
         .then(function (arrayBuffer) {
             parseGeoraster(arrayBuffer).then(function (georaster) {
-                var scale = chroma.scale(["blue","green","yellow", "red"]).domain([-20, 100]);
+                var scale = chroma.scale(["green","yellow", "red"]).domain([-20, 100]);
                 var layer = new GeoRasterLayer({
                     
               opacity: 0.5,
