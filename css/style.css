@@ -33,11 +33,11 @@ body {
     justify-content: center;
     right:10;
     top: 170;
-    width: 250px;
+    width: 320px;
     height: 400px;
     background: hwb(0 34% 66% / 0.705);
     display:flex;
-    border-radius: 19px ;
+    border-radius: 18px ;
     position:fixed;
     padding: 10px;
     align-items: right;
@@ -49,7 +49,7 @@ body {
     bottom: 5;
     width: 550px;
     height: 75px;
-    background: #575757;
+    background: #57575794;
     display:block;
     border-radius: 19px ;
     position:fixed;
@@ -78,3 +78,20 @@ body {
     height: 10%;  
 }
 .col2:last-child {margin-right:0;  }
+.wip{
+    
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 19;
+        color: aliceblue;
+        z-index: 900;
+        align-items: right;
+        justify-content: center;
+        right:15;
+        top: 0;
+        display:flex;
+        border-radius: 18px ;
+        position:fixed;
+        padding: 10px;
+        align-items: right;
+    
+}

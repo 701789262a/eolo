@@ -1,67 +1,81 @@
 <html>
-    <head>
-        <title>Copertura Eolo</title>
-        <link rel="stylesheet" href="css/style.css">
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    </head>
-    <body>
-        <div class="toprow">
-            <h2>Mappa copertura italiana FWA EOLO - Work in progress</h2>
-            <div class="rightmenu" id="rightmenu">
-                <div class="container">
-                    <div class="row"><p>Informazioni BTS</p>
+
+<head>
+    <title>Copertura Eolo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+    <div class="toprow">
+        <h2>Mappa copertura italiana FWA EOLO - Work in progress</h2>
+        <div class="wip">
+            <p>Settori completi: </p>
+            <p id="sectorcomplete"></p>
+            <div style="padding-left: 25;"></div>
+            <p>Heatmap complete: </p>
+            <p id="heatmapcomplete"></p>
+        </div>
+        <div class="rightmenu" id="rightmenu">
+
+            <div class="container">
+                <div class="row">
+                    <p>Informazioni BTS</p>
+                </div>
+                <div class="row">
+                    <div class="col2">
+                        <p>Latitudine</p>
                     </div>
-                    <div class="row">
-                        <div class="col2">
-                          <p>Latitudine</p>
-                        </div>
-                        <div class="col2" id ="lat"></div>
+                    <div class="col2" id="lat"></div>
+                </div>
+                <div class="row">
+                    <div class="col2">
+                        <p>Longitudine</p>
                     </div>
-                        <div class="row">
-                        <div class="col2">
-                            <p>Longitudine</p>
-                        </div>
-                        <div class="col2"id ="lng"></div>
+                    <div class="col2" id="lng"></div>
+                </div>
+                <div class="row">
+                    <div class="col2">
+                        <p>Settori</p>
                     </div>
-                        <div class="row">
-                        <div class="col2">
-                            <p>Settori</p>
-                        </div>
-                        <div class="col2"id ="sec"></div>
+                    <div class="col2" id="sec"></div>
+                </div>
+                <div class="row">
+                    <div class="col2">
+                        <p>Tecnologia</p>
                     </div>
-                    <div class="row">
-                        <div class="col2">
-                            <p>Tecnologia</p>
-                        </div>
-                        <div class="col2"id ="tecno"></div>
-                    </div>
+                    <div class="col2" id="tecno"></div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div>
+    <div>
         <div class="main-row">
             <div>
-                <span id="dataspan">  </span>
+                <span id="dataspan"> </span>
             </div>
-            
-            
-           
+
+
+
         </div>
-        
+
     </div>
-    
+
     <div style="  align-items: center;justify-content: center;  display: flex;    ">
-        
+
         <div class="menu" id="menu">
-            <p>This div is horizontally and vertically centered.</p>
+            <p>menu del cazzo</p>
         </div>
     </div>
     <div id="map"></div>
-    </body>
-</html>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</body>
 
-<script src ="js/map.js?10"></script>
-<script src ="js/script.js"></script>
+</html>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<script src="js/map.js?10"></script>
+<script src="js/script.js"></script>
