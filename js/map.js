@@ -35,6 +35,9 @@ async function getSectors(bts_name){
             },
         }
         );
+    if (sectors.status !== 200){
+        return 0;
+    }
     sekt = await sectors.json();
     return sekt;
 }
@@ -43,12 +46,18 @@ async function onClick(e) {
 
     console.log(sesso);
     tecnos_filtered =[]
-    tecnos = getSectorCoverage(sesso);
-    for (let i = 0; i < Object.keys(tecnos).length; i++){
-        if (!tecnos[i].includes("tecno 0")){
-            tecnos_filtered.push(tecnos[i]);
+    if (sesso !== 0){
+        tecnos = getSectorCoverage(sesso);
+        for (let i = 0; i < Object.keys(tecnos).length; i++){
+            if (!tecnos[i].includes("tecno 0")){
+                tecnos_filtered.push(tecnos[i]);
+            }
         }
+    }else{
+        tecnos_filtered = ":C"
     }
+    
+
     console.log(tecnos_filtered);
     console.log(this.options.name);
     document.getElementById('lat').innerHTML = `<p>${e.latlng['lat']}</p>`;
@@ -76,7 +85,7 @@ function getSectorCoverage(prova_sec){
         }
     }
     for (let i = 0 ; i < 3; i++){
-        
+        console.log(`tecno ${i}`);
         s=0
         try{
             console.log(Object.keys(prova_sec[i][i]).length);
@@ -84,18 +93,41 @@ function getSectorCoverage(prova_sec){
             console.log(`error ${i}`);
             continue
         }
+        console.log(`tecno length ${Object.keys(prova_sec[i][i]).length}`);
         if (Object.keys(prova_sec[i][i]).length ==1 ){
-            //console.log(`tecno ${i}: ${prova_sec[i][i][0][0]} - ${prova_sec[i][i][0][1]}`);
+            console.log(`tecno ${i}: ${prova_sec[i][i][0][0]} - ${prova_sec[i][i][0][1]}`);
             tecnos.push(`tecno ${i}: ${Math.round((prova_sec[i][i][0][0] + Number.EPSILON) * 100) / 100} - ${Math.round((prova_sec[i][i][0][1] + Number.EPSILON) * 100) / 100}`);
+            continue
         }
         
         for (let j = 1; j < Object.keys(prova_sec[i][i]).length; j++){
+            console.log(`piece ${j}`);
             start = prova_sec[i][i][s][0];
+            if (j == Object.keys(prova_sec[i][i]).length-1){
+                console.log('last');
+                if (prova_sec[i][i][j][0] == prova_sec[i][i][j-1][1]){
+                    end = prova_sec[i][i][j][1];
+                    console.log(`tecno ${i}: ${start} - ${end}`);
+                    tecnos.push(`tecno ${i}: ${Math.round((start + Number.EPSILON) * 100) / 100} - ${Math.round((end + Number.EPSILON) * 100) / 100}`);
+
+                }else{
+                    end = prova_sec[i][i][j-1][1];
+                    console.log(`tecno ${i}: ${start} - ${end}`);
+                    tecnos.push(`tecno ${i}: ${Math.round((start + Number.EPSILON) * 100) / 100} - ${Math.round((end + Number.EPSILON) * 100) / 100}`);
+
+                    start = prova_sec[i][i][j][0];
+                    end = prova_sec[i][i][j][1];
+                    console.log(`tecno ${i}: ${start} - ${end}`);
+                    tecnos.push(`tecno ${i}: ${Math.round((start + Number.EPSILON) * 100) / 100} - ${Math.round((end + Number.EPSILON) * 100) / 100}`);
+
+                }
+                break;
+            }
             if (prova_sec[i][i][j][0] == prova_sec[i][i][j-1][1]){
 
             }else{
-                end = prova_sec[0][i][j-1][1]
-                //console.log(`tecno ${i}: ${start} - ${end}`);
+                end = prova_sec[i][i][j-1][1];
+                console.log(`tecno ${i}: ${start} - ${end}`);
                 
                 tecnos.push(`tecno ${i}: ${Math.round((start + Number.EPSILON) * 100) / 100} - ${Math.round((end + Number.EPSILON) * 100) / 100}`);
                 s=j;

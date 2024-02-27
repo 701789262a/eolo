@@ -33,7 +33,7 @@ body {
     justify-content: center;
     right:10;
     top: 170;
-    width: 320px;
+    width: 360px;
     height: 400px;
     background: hwb(0 34% 66% / 0.705);
     display:flex;
