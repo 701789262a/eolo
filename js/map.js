@@ -21,7 +21,11 @@ async function writeBts() {
         
         var marker = L.marker([bts_json[bts]['lat'], bts_json[bts]['lng']], {
              name: bts_json[bts]['nome'],
-             tecno: bts_json[bts]['tech_string']
+             tecno: bts_json[bts]['tech_string'],
+             inf_sx_lat:bts_json[bts]['inf_sx_lat'],
+             inf_sx_lng:bts_json[bts]['inf_sx_lng'],
+             sup_dx_lat:bts_json[bts]['sup_dx_lat'],
+             sup_dx_lng:bts_json[bts]['sup_dx_lng']
             }).addTo(map).on('click', onClick);
         var popup = marker.bindPopup(`${bts_json[bts]['nome']}`).addTo(map);
 
@@ -42,12 +46,13 @@ async function getSectors(bts_name){
     return sekt;
 }
 async function onClick(e) {
-    var imageUrl = `https://eolo.zeromist.net/images/${this.options.name}.png`;
-    var latLngBounds = L.latLngBounds([[45, 8], [44.9,8.1]]);
+    var imageUrl = `https://eolo.zeromist.net/images/${this.options.name.toLowerCase()}.png`;
+    console.log(imageUrl);
+    var latLngBounds = L.latLngBounds([[this.options.sup_dx_lat, this.options.inf_sx_lng], [this.options.inf_sx_lat,this.options.sup_dx_lng]]);
     var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
         opacity: 0.8,
-        errorOverlayUrl: errorOverlayUrl,
-        alt: altText,
+        errorOverlayUrl: "https://cdn-icons-png.flaticon.com/512/110/110686.png",
+        alt: "affammoc",
         interactive: true
     }).addTo(map);
     
