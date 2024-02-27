@@ -1,5 +1,4 @@
-var parse_georaster = require("georaster");
-var GeoRasterLayer = require("georaster-layer-for-leaflet");
+import GeoRasterLayer from "georaster-layer-for-leaflet";
 
 var map = L.map('map').setView([41.9, 12.5], 10);
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
