@@ -35,14 +35,15 @@ async function getSectors(bts_name){
             },
         }
         );
-    sec = sectors.json();
-    console.log(sec);
-    return sec
+    sekt = await sectors.json();
+    return sekt;
 }
-function onClick(e) {
-    sectors = getSectors(this.options.name);
+async function onClick(e) {
+    sesso = await getSectors(this.options.name);
+
+    console.log(sesso);
     tecnos_filtered =[]
-    tecnos = getSectorCoverage(sectors);
+    tecnos = getSectorCoverage(sesso);
     for (let i = 0; i < Object.keys(tecnos).length; i++){
         if (!tecnos[i].includes("tecno 0")){
             tecnos_filtered.push(tecnos[i]);
