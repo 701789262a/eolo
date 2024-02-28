@@ -17,15 +17,24 @@ async function writeBts() {
         }
     );
     bts_json = await bts_list.json();
+    var markers = L.markerClusterGroup({
+        
+			maxClusterRadius: 100,
+            spiderfyOnMaxZoom: false, showCoverageOnHover: true, zoomToBoundsOnClick: true,chunkedLoading: true
+    }
+    );
+
     for (bts in bts_json) {
 
-        var marker = L.marker([bts_json[bts]['lat'], bts_json[bts]['lng']], {
+        marker = L.marker([bts_json[bts]['lat'], bts_json[bts]['lng']], {
             name: bts_json[bts]['nome'],
             tecno: bts_json[bts]['tech_string'],
-        }).addTo(map).on('click', onClick);
-        var popup = marker.bindPopup(`${bts_json[bts]['nome']}`).addTo(map);
+        }).on('click', onClick);
+        var popup = marker.bindPopup(`${bts_json[bts]['nome']}`)
+        markers.addLayer(marker);
 
     }
+    map.addLayer(markers);
 }
 async function getSectors(bts_name) {
     var sectors = await fetch(`https://eolo.zeromist.net/sectors/${bts_name}_sectors`,
