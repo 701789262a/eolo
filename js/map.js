@@ -51,7 +51,7 @@ async function getSectors(bts_name) {
     return sekt;
 }
 async function onClick(e) {
-    var url_to_geotiff_file = `https://eolo.zeromist.net/images/${this.options.name.toLowerCase()}.tif`;
+    var url_to_geotiff_file = `https://eolo.zeromist.net/images/${this.options.name}.tif`;
 
     fetch(url_to_geotiff_file)
         .then(function (response) {
@@ -59,7 +59,7 @@ async function onClick(e) {
         })
         .then(function (arrayBuffer) {
             parseGeoraster(arrayBuffer).then(function (georaster) {
-                var scale = chroma.scale(["green","yellow","yellow","yellow", "red"]).domain([-20, 100]);
+                var scale = chroma.scale(["green","yellow","orange", "red"]).domain([-20, 99]);
                 var layer = new GeoRasterLayer({
                     
               opacity: 0.5,
@@ -70,6 +70,7 @@ async function onClick(e) {
                       const value = values[0];
                       if (value < -5) return "rgb(0, 0, 0)";
                       if (values[3] == 0) {return "rgba(0,0,0,0)"};
+                      if (value >100) {return "rgba(0,0,0,0)"};
                       return scale(value).hex();
                     }
                   });
