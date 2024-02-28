@@ -51,7 +51,8 @@ async function getSectors(bts_name) {
     return sekt;
 }
 async function onClick(e) {
-    var url_to_geotiff_file = "https://eolo.zeromist.net/images/badesi.tif";
+    var url_to_geotiff_file = `https://eolo.zeromist.net/images/${this.options.name.toLowerCase()}.tif`;
+
     fetch(url_to_geotiff_file)
         .then(function (response) {
             return response.arrayBuffer();
