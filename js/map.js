@@ -1,6 +1,6 @@
 
 
-var map = L.map('map').setView([40.96155, 8.872], 10);
+var map = L.map('map').setView([40.96155, 8.872], 11);
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -49,15 +49,17 @@ async function onClick(e) {
         })
         .then(function (arrayBuffer) {
             parseGeoraster(arrayBuffer).then(function (georaster) {
-                var scale = chroma.scale(["green","yellow", "red"]).domain([-20, 100]);
+                var scale = chroma.scale(["green","yellow","yellow","yellow", "red"]).domain([-20, 100]);
                 var layer = new GeoRasterLayer({
                     
               opacity: 0.5,
                     georaster: georaster,
                     resolution: 512,
                     pixelValuesToColorFn: function (values) {
+                        //console.log(values);
                       const value = values[0];
-                      if (value < -10) return "rgb(25, 25, 25)";
+                      if (value < -5) return "rgb(0, 0, 0)";
+                      if (values[3] == 0) {return "rgba(0,0,0,0)"};
                       return scale(value).hex();
                     }
                   });
