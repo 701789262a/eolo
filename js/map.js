@@ -18,9 +18,9 @@ async function writeBts() {
     );
     bts_json = await bts_list.json();
     var markers = L.markerClusterGroup({
-        
-			maxClusterRadius: 100,
-            spiderfyOnMaxZoom: false, showCoverageOnHover: true, zoomToBoundsOnClick: true,chunkedLoading: true
+
+        maxClusterRadius: 100,
+        spiderfyOnMaxZoom: false, showCoverageOnHover: true, zoomToBoundsOnClick: true, chunkedLoading: true
     }
     );
 
@@ -59,29 +59,34 @@ async function onClick(e) {
         })
         .then(function (arrayBuffer) {
             parseGeoraster(arrayBuffer).then(function (georaster) {
-                var scale = chroma.scale(["green","yellow","orange", "red"]).domain([-20, 99]);
+                var scale = chroma.scale(["green", "yellow", "orange", "red"]).domain([-20, 99]);
                 var layer = new GeoRasterLayer({
-                    
-              opacity: 0.5,
+
+                    opacity: 0.5,
                     georaster: georaster,
                     resolution: 512,
                     pixelValuesToColorFn: function (values) {
                         //console.log(values);
-                      const value = values[0];
-                      if (value < -5) return "rgb(0, 0, 0)";
-                      if (values[3] == 0) {return "rgba(0,0,0,0)"};
-                      if (value >100) {return "rgba(0,0,0,0)"};
-                      return scale(value).hex();
+                        const value = values[0];
+                        if (value < -5) return "rgb(0, 0, 0)";
+                        if (values[3] == 0) { return "rgba(0,0,0,0)" };
+                        if (value > 100) { return "rgba(0,0,0,0)" };
+                        return scale(value).hex();
                     }
-                  });
-                  layer.addTo(map);
-                  map.fitBounds(layer.getBounds());
-      
+                });
+                layer.addTo(map);
+                map.fitBounds(layer.getBounds());
+
             })
         });
+    var customPane = map.createPane("customPane");
+    var canvasRenderer = L.canvas({ pane: customPane });
 
-    
+    //L.Polyline.Arc([41.041757, 8.8791], [43.874678, 8.839416],{vertices: 200}).addTo(map);
+    //var pathOne = L.curve(['M', [e.latlng['lat'], e.latlng['lng']],
+    //   'L', [41.041757, 8.8791],
 
+    //    'Z'], { animate: 3000, renderer: canvasRenderer }).addTo(map);
     sesso = await getSectors(this.options.name);
 
     console.log(sesso);
@@ -96,7 +101,20 @@ async function onClick(e) {
     } else {
         tecnos_filtered = ":C"
     }
-
+    if (tecnos_filtered != ":C") {
+for (let k = 0;k<tecnos_filtered.length;k++){
+    this_sector = tecnos_filtered[k].split(':')[1].split('-');
+    L.sector({
+        center: [e.latlng['lat'], e.latlng['lng']],
+        innerRadius: 0,
+        outerRadius: 10000,
+        startBearing: parseInt(this_sector[0]),
+        endBearing: parseInt(this_sector[1]),
+        numberOfPoints: 100,
+        color: 'rgb(0,0,255)'
+    }).addTo(map);
+}
+    }
 
     console.log(tecnos_filtered);
     console.log(this.options.name);
