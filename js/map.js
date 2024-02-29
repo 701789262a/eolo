@@ -7,7 +7,7 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 });
 osm.addTo(map);
 writeBts();
-
+makka = []
 async function writeBts() {
     var bts_list = await fetch("https://eolo.zeromist.net/lista_bts.json",
         {
@@ -18,7 +18,7 @@ async function writeBts() {
     );
     bts_json = await bts_list.json();
     var markers = L.markerClusterGroup({
-
+        layer_base: true,
         maxClusterRadius: 100,
         spiderfyOnMaxZoom: false, showCoverageOnHover: true, zoomToBoundsOnClick: true, chunkedLoading: true
     }
@@ -34,7 +34,9 @@ async function writeBts() {
         markers.addLayer(marker);
 
     }
-    map.addLayer(markers);
+    markers.addTo(map);
+    //map.addLayer(markers);
+    makka.push(markers);
 }
 async function getSectors(bts_name) {
     var sectors = await fetch(`https://eolo.zeromist.net/sectors/${bts_name}_sectors`,
@@ -51,6 +53,13 @@ async function getSectors(bts_name) {
     return sekt;
 }
 async function onClick(e) {
+    console.log(map);
+    map.eachLayer(function(layer){
+        if (layer['options']['removable']===true){
+            map.removeLayer(layer);
+        }
+    });
+
     var url_to_geotiff_file = `https://eolo.zeromist.net/images/${this.options.name}.tif`;
 
     fetch(url_to_geotiff_file)
@@ -61,7 +70,7 @@ async function onClick(e) {
             parseGeoraster(arrayBuffer).then(function (georaster) {
                 var scale = chroma.scale(["green", "yellow", "orange", "red"]).domain([-20, 99]);
                 var layer = new GeoRasterLayer({
-
+                    removable:true,
                     opacity: 0.5,
                     georaster: georaster,
                     resolution: 512,
@@ -102,18 +111,19 @@ async function onClick(e) {
         tecnos_filtered = ":C"
     }
     if (tecnos_filtered != ":C") {
-for (let k = 0;k<tecnos_filtered.length;k++){
-    this_sector = tecnos_filtered[k].split(':')[1].split('-');
-    L.sector({
-        center: [e.latlng['lat'], e.latlng['lng']],
-        innerRadius: 0,
-        outerRadius: 10000,
-        startBearing: parseInt(this_sector[0]),
-        endBearing: parseInt(this_sector[1]),
-        numberOfPoints: 100,
-        color: 'rgb(0,0,255)'
-    }).addTo(map);
-}
+        for (let k = 0; k < tecnos_filtered.length; k++) {
+            this_sector = tecnos_filtered[k].split(':')[1].split('-');
+            L.sector({
+                removable:true,
+                center: [e.latlng['lat'], e.latlng['lng']],
+                innerRadius: 0,
+                outerRadius: 10000,
+                startBearing: parseInt(this_sector[0]),
+                endBearing: parseInt(this_sector[1]),
+                numberOfPoints: 100,
+                color: 'rgb(0,0,255)'
+            }).addTo(map);
+        }
     }
 
     console.log(tecnos_filtered);
