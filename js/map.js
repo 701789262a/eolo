@@ -29,7 +29,7 @@ async function writeBts() {
         marker = L.marker([bts_json[bts]['lat'], bts_json[bts]['lng']], {
             name: bts_json[bts]['nome'],
             tecno: bts_json[bts]['tech_string'],
-        }).on('click', onClick);
+        }).on('click', await onClick);
         var popup = marker.bindPopup(`${bts_json[bts]['nome']}`)
         markers.addLayer(marker);
 
