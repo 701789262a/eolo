@@ -158,7 +158,7 @@ function getSectorCoverage(prova_sec) {
             //console.log(prova_sec[i][i][j]);
         }
     }
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i <= 3; i++) {
         console.log(`tecno ${i}`);
         s = 0
         try {
