@@ -110,9 +110,15 @@ async function onClick(e) {
     } else {
         tecnos_filtered = ":C"
     }
+    tecno_colors ={
+        'tecno 1':'rgb(255,0,0)',
+        'tecno 2':'rgb(0,255,0)',
+        'tecno 3':'rgb(0,0,255)',
+    }
     if (tecnos_filtered != ":C") {
         for (let k = 0; k < tecnos_filtered.length; k++) {
             this_sector = tecnos_filtered[k].split(':')[1].split('-');
+            
             L.sector({
                 removable:true,
                 center: [e.latlng['lat'], e.latlng['lng']],
@@ -121,7 +127,7 @@ async function onClick(e) {
                 startBearing: parseInt(this_sector[0]),
                 endBearing: parseInt(this_sector[1]),
                 numberOfPoints: 100,
-                color: 'rgb(0,0,255)'
+                color: tecno_colors[tecnos_filtered[k].split(':')[0]]
             }).addTo(map);
         }
     }
