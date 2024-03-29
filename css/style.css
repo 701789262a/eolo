@@ -52,7 +52,6 @@ body {
     right:10;
     top: 520;
     width: 360px;
-    height: 120px;
     background: hwb(0 34% 66% / 0.705);
     display:flex;
     border-radius: 18px ;
@@ -91,6 +90,7 @@ body {
 
 .col2 {
     width:49%;
+    float:left;
     margin-right:2%;  
     height: 10%;  
 }
