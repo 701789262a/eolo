@@ -42,6 +42,24 @@ body {
     padding: 10px;
     align-items: right;
 }
+.legenda{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19;
+    color: aliceblue;
+    z-index: 900;
+    align-items: right;
+    justify-content: center;
+    right:10;
+    top: 520;
+    width: 360px;
+    height: 120px;
+    background: hwb(0 34% 66% / 0.705);
+    display:flex;
+    border-radius: 18px ;
+    position:fixed;
+    padding: 10px;
+    align-items: right;
+}
 .menu {
     z-index: 900;
     align-items: center;
@@ -76,6 +94,21 @@ body {
     float:left;
     margin-right:2%;  
     height: 10%;  
+}
+.collegend {
+    width:6%;
+    float:left;
+    margin-right:2%;  
+    height: 10%;  
+}
+.tecno1{
+    color:red;
+}
+.tecno2{
+    color:green;
+}
+.tecno3{
+    color:blue;
 }
 .col2:last-child {margin-right:0;  }
 .wip{
