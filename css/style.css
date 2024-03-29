@@ -14,8 +14,6 @@ h2 {
 
 .toprow { 
     padding-left: 24px;
-    padding-top: 5px;
-    padding-bottom: 8px;
 }
 body {
     margin: 0;
@@ -57,6 +55,7 @@ body {
     display:flex;
     border-radius: 18px ;
     position:fixed;
+    padding: 10px;
     align-items: right;
 }
 .menu {
