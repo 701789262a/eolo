@@ -116,7 +116,7 @@ async function onClick(e) {
         'tecno 3':'rgb(0,0,255)',
     }
     if (tecnos_filtered != ":C") {
-        for (let k = 0; k < tecnos_filtered.length; k++) {
+        for (let k = 0; k <= tecnos_filtered.length; k++) {
             this_sector = tecnos_filtered[k].split(':')[1].split('-');
             
             L.sector({
