@@ -116,7 +116,7 @@ async function onClick(e) {
         'tecno 3':'rgb(0,0,255)',
     }
     if (tecnos_filtered != ":C") {
-        for (let k = 0; k <= tecnos_filtered.length; k++) {
+        for (let k = 0; k < tecnos_filtered.length; k++) {
             this_sector = tecnos_filtered[k].split(':')[1].split('-');
             
             L.sector({
@@ -142,7 +142,7 @@ async function onClick(e) {
 
 function getSectorCoverage(prova_sec) {
     var tecnos = []
-    for (let i = 0; i <= 3; i++) {
+    for (let i = 0; i < 3; i++) {
         try {
             console.log(Object.keys(prova_sec[i][i]).length);
         } catch (e) {
@@ -158,7 +158,7 @@ function getSectorCoverage(prova_sec) {
             //console.log(prova_sec[i][i][j]);
         }
     }
-    for (let i = 0; i <= 3; i++) {
+    for (let i = 0; i < 3; i++) {
         console.log(`tecno ${i}`);
         s = 0
         try {
