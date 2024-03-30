@@ -14,8 +14,7 @@ headers = {
     'Cookie': 'frontend_lang=it_IT; session_id=f195ee4a8586d5b0ac4a7ec2886169701a285dff',
     'Access-Control-Allow-Origin':'*'
 }
-const cors = require('cors');
-app.use(cors());
+
 
 var map = L.map('map').setView([40.96155, 8.872], 11);
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
