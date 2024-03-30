@@ -118,14 +118,24 @@ async function onClick(e) {
     if (tecnos_filtered != ":C") {
         for (let k = 0; k < tecnos_filtered.length; k++) {
             this_sector = tecnos_filtered[k].split(':')[1].split('-');
-            
+            if (this_sector[1]==0){
+                if (tecnos_filtered[k].split(':')[0] == tecnos_filtered[k+1].split(':')[0]){
+                    end_sector[1] = tecnos_filtered[k+1].split(':')[1].split('-');
+                }else{
+                    end_sector[1]=360;
+                }
+
+            }
+            else{
+                end_sector = tecnos_filtered[k].split(':')[1].split('-');
+            }
             L.sector({
                 removable:true,
                 center: [e.latlng['lat'], e.latlng['lng']],
                 innerRadius: 0,
-                outerRadius: 10000,
+                outerRadius: 10000+ (tecnos_filtered[k].split(':')[0].split(" ")[1])*500,
                 startBearing: parseInt(this_sector[0]),
-                endBearing: parseInt(this_sector[1]),
+                endBearing: parseInt(end_sector[1]),
                 numberOfPoints: 100,
                 color: tecno_colors[tecnos_filtered[k].split(':')[0]]
             }).addTo(map);
@@ -136,8 +146,8 @@ async function onClick(e) {
     console.log(this.options.name);
     document.getElementById('lat').innerHTML = `<p>${e.latlng['lat']}</p>`;
     document.getElementById('lng').innerHTML = `<p>${e.latlng['lng']}</p>`;
-    document.getElementById('sec').innerHTML = `<p>${tecnos_filtered}</p>`;
-    document.getElementById('tecno').innerHTML = `<p>${this.options.tecno}</p>`;
+    document.getElementById('sec').innerHTML = `<p>${tecnos_filtered.join(" <br>")}</p>`;
+    document.getElementById('tecno').innerHTML = `<p>${this.options.tecno.replace("EOLO","").replace("EOLO","")}</p>`;
 }
 
 function getSectorCoverage(prova_sec) {

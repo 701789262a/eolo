@@ -88,8 +88,14 @@ body {
     padding:2px;
 }
 
+.col1 {
+    width:30%;
+    float:left;
+    margin-right:2%;  
+    height: 10%;  
+}
 .col2 {
-    width:49%;
+    width:65%;
     float:left;
     margin-right:2%;  
     height: 10%;  
