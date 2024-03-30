@@ -12,10 +12,7 @@ headers = {
     'X-Requested-With': 'XMLHttpRequest',
     'Content-Type': 'application/x-www-form-urlencoded',
     'Cookie': 'frontend_lang=it_IT; session_id=f195ee4a8586d5b0ac4a7ec2886169701a285dff',
-    'Origin':'https://www.ivynet.it',
-    'X-Requested-With':'XMLHttpRequest'
 }
-
 
 var map = L.map('map').setView([40.96155, 8.872], 11);
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -35,8 +32,7 @@ osm.addTo(map);
 writeBts();
 makka = []
 async function writeBts() {
-    url ='https://corsproxy.io/?' +encodeURIComponent('https://eolo.zeromist.net/lista_bts.json');
-    var bts_list = await fetch(url,
+    var bts_list = await fetch("https://eolo.zeromist.net/lista_bts.json",
         {
             mode: "cors", method: "GET", headers: {
                 "Content-Type": "application/json",
@@ -66,18 +62,11 @@ async function writeBts() {
     makka.push(markers);
 }
 async function queryIvynet(lat,lng){
-    params= `action=CoverRD&lat=${lat}&lon=${lng}&csrf_token=24913ff698efb7e6d9c0782a26fbf89ea4235ec9o'`
-
-const body = {
-    userId: 1,
-    title: "Fix my bugs",
-    completed: false
-  };
-  $.post("https://www.ivynet.it/copertura/raw", params, (data, status) => {
-    console.log(data);
-  });
-  
-
+    fetch('https://crossorigin.me/https://www.ivynet.it/copertura/raw', {
+  method: "POST",
+  body: `action=CoverRD&lat=${lat}&lon=${lng}&csrf_token=d974ca62dd93c43ef54077a773d718fe0d401735o`,
+  headers: headers
+}).then((response)=>console.log(response));
 }
 async function getSectors(bts_name) {
     var sectors = await fetch(`https://eolo.zeromist.net/sectors/${bts_name}_sectors`,
