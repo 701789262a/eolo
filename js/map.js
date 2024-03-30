@@ -63,11 +63,18 @@ async function writeBts() {
     makka.push(markers);
 }
 async function queryIvynet(lat,lng){
-    fetch("https://www.ivynet.it/copertura/raw", {
-  method: "POST",
-  body: `action=CoverRD&lat=${lat}&lon=${lng}&csrf_token=24913ff698efb7e6d9c0782a26fbf89ea4235ec9o'`,
-  headers: headers
-}).then((response)=>console.log(response));
+    params= `action=CoverRD&lat=${lat}&lon=${lng}&csrf_token=24913ff698efb7e6d9c0782a26fbf89ea4235ec9o'`
+
+const body = {
+    userId: 1,
+    title: "Fix my bugs",
+    completed: false
+  };
+  $.post("https://www.ivynet.it/copertura/raw", params, (data, status) => {
+    console.log(data);
+  });
+  
+
 }
 async function getSectors(bts_name) {
     var sectors = await fetch(`https://eolo.zeromist.net/sectors/${bts_name}_sectors`,
