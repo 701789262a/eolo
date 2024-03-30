@@ -35,7 +35,8 @@ osm.addTo(map);
 writeBts();
 makka = []
 async function writeBts() {
-    var bts_list = await fetch("https://eolo.zeromist.net/lista_bts.json",
+    url ='https://corsproxy.io/?' +encodeURIComponent('https://eolo.zeromist.net/lista_bts.json');
+    var bts_list = await fetch(url,
         {
             mode: "cors", method: "GET", headers: {
                 "Content-Type": "application/json",
