@@ -1,9 +1,32 @@
-
+headers = {
+    'method': 'GET',
+    'scheme': 'https',
+    'Accept': 'application/json, text/javascript, */*; q=0.01',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Language': 'it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7,de;q=0.6,es;q=0.5,zh-CN;q=0.4,zh;q=0.3',
+    'Referer': 'https://www.ivynet.it/copertura/raw',
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'same-origin',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15',
+    'X-Requested-With': 'XMLHttpRequest',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Cookie': 'frontend_lang=it_IT; session_id=f195ee4a8586d5b0ac4a7ec2886169701a285dff'
+}
 
 var map = L.map('map').setView([40.96155, 8.872], 11);
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+map.on('click',function(e){
+    document.body.onclick = async function (f) {
+        if (f.ctrlKey) {
+           //alert("ctr key was pressed during the click");
+           console.log(e);
+           await queryIvynet(e['latlng']['lat'],e['latlng']['lng']);
+        }
+    }
 });
 osm.addTo(map);
 writeBts();
@@ -37,6 +60,13 @@ async function writeBts() {
     markers.addTo(map);
     //map.addLayer(markers);
     makka.push(markers);
+}
+async function queryIvynet(lat,lng){
+    fetch("https://www.ivynet.it/copertura/raw", {
+  method: "POST",
+  body: `action=CoverRD&lat=${lat}&lon=${lng}&csrf_token=24913ff698efb7e6d9c0782a26fbf89ea4235ec9o'`,
+  headers: headers
+}).then((response)=>console.log(response));
 }
 async function getSectors(bts_name) {
     var sectors = await fetch(`https://eolo.zeromist.net/sectors/${bts_name}_sectors`,
