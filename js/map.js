@@ -6,7 +6,6 @@ headers = {
     'Accept-Language': 'it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7,de;q=0.6,es;q=0.5,zh-CN;q=0.4,zh;q=0.3',
     'Referer': 'https://www.ivynet.it/copertura/raw',
     'Sec-Fetch-Dest': 'empty',
-    'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-origin',
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15',
     'X-Requested-With': 'XMLHttpRequest',
