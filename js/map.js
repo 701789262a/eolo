@@ -13,7 +13,7 @@ headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
     'Cookie': 'frontend_lang=it_IT; session_id=f195ee4a8586d5b0ac4a7ec2886169701a285dff',
 }
-
+var selectedBts = "";
 var map = L.map('map').setView([40.96155, 8.872], 11);
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -21,10 +21,10 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 });
 map.on('click',function(e){
     document.body.onclick = async function (f) {
-        if (f.ctrlKey) {
+        if (f.ctrlKey && selectedBts!="") {
            //alert("ctr key was pressed during the click");
            console.log(e);
-           await queryIvynet(e['latlng']['lat'],e['latlng']['lng']);
+           await queryIvynet(e['latlng']['lat'],e['latlng']['lng'],selectedBts);
         }
     }
 });
@@ -61,12 +61,14 @@ async function writeBts() {
     //map.addLayer(markers);
     makka.push(markers);
 }
-async function queryIvynet(lat,lng){
-    fetch('https://crossorigin.me/https://www.ivynet.it/copertura/raw', {
-  method: "POST",
-  body: `action=CoverRD&lat=${lat}&lon=${lng}&csrf_token=d974ca62dd93c43ef54077a773d718fe0d401735o`,
-  headers: headers
-}).then((response)=>console.log(response));
+async function queryIvynet(lat,lng,selectedBts){
+    console.log(selectedBts);
+    response = await fetch(`http://51.20.185.73:5000/?lat=${lat}&lng=${lng}&bts=${selectedBts}`, {
+         method: "GET"
+    });
+    click_tecno = await response.json();
+    console.log(click_tecno);
+    document.getElementById('menu').innerHTML= `<p>${JSON.stringify(click_tecno)} @ lat ${lat} / lng ${lng}</p>`;
 }
 async function getSectors(bts_name) {
     var sectors = await fetch(`https://eolo.zeromist.net/sectors/${bts_name}_sectors`,
@@ -83,6 +85,8 @@ async function getSectors(bts_name) {
     return sekt;
 }
 async function onClick(e) {
+    selectedBts = this.options.name;
+    console.log(selectedBts);
     console.log(map);
     map.eachLayer(function(layer){
         if (layer['options']['removable']===true){
