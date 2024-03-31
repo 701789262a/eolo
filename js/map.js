@@ -63,7 +63,7 @@ async function writeBts() {
 }
 async function queryIvynet(lat,lng,selectedBts){
     console.log(selectedBts);
-    response = await fetch(`http://51.20.185.73:5000/?lat=${lat}&lng=${lng}&bts=${selectedBts}`, {
+    response = await fetch(`https://51.20.185.73:5000/?lat=${lat}&lng=${lng}&bts=${selectedBts}`, {
          method: "GET"
     });
     click_tecno = await response.json();
