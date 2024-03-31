@@ -28,6 +28,20 @@ map.on('click',function(e){
         }
     }
 });
+var LeafIcon = L.Icon.extend({
+    options: {
+       iconSize:     [38, 95],
+       shadowSize:   [50, 64],
+       iconAnchor:   [22, 94],
+       shadowAnchor: [4, 62],
+       popupAnchor:  [-3, -76]
+    }
+});
+var greenIcon = new LeafIcon({
+    iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
+    shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
+})
+
 osm.addTo(map);
 writeBts();
 makka = []
@@ -62,8 +76,19 @@ async function writeBts() {
     makka.push(markers);
 }
 async function queryIvynet(lat,lng,selectedBts){
+    marker = L.marker([lat, lng], {
+        
+        name: selectedBts});
+    try{
+        layergroup.clearLayers();
+    }
+    catch(e){
+
+    }
+    layergroup=L.layerGroup([marker])
+        .addTo(map);
     console.log(selectedBts);
-    response = await fetch(`https://51.20.185.73:5000/?lat=${lat}&lng=${lng}&bts=${selectedBts}`, {
+    response = await fetch(`https://eoloapi.zeromist.net:5000/?lat=${lat}&lng=${lng}&bts=${selectedBts}`, {
          method: "GET"
     });
     click_tecno = await response.json();
