@@ -99,7 +99,7 @@ async function queryIvynet(lat,lng,selectedBts){
     layergroup=L.layerGroup([marker])
         .addTo(map);
     console.log(selectedBts);
-    response = await fetch(`https://eoloapi.zeromist.net:5000/?lat=${lat}&lng=${lng}&bts=${selectedBts}`, {
+    response = await fetch(`http://eoloapi.zeromist.net:80/?lat=${lat}&lng=${lng}&bts=${selectedBts}`, {
          method: "GET"
     });
     click_tecno = await response.json();
