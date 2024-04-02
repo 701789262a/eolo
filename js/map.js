@@ -41,7 +41,7 @@ var greenIcon = new LeafIcon({
     iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
     shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
-
+real_sectors=[];
 osm.addTo(map);
 writeBts();
 makka = []
@@ -60,13 +60,15 @@ async function writeBts() {
         spiderfyOnMaxZoom: false, showCoverageOnHover: true, zoomToBoundsOnClick: true, chunkedLoading: true
     }
     );
-
+    bts_list_latlng= new Object()
     for (bts in bts_json) {
-
+        
         marker = L.marker([bts_json[bts]['lat'], bts_json[bts]['lng']], {
             name: bts_json[bts]['nome'],
             tecno: bts_json[bts]['tech_string'],
+            id : bts_json[bts]['id']
         }).on('click', await onClick);
+        bts_list_latlng[bts_json[bts]['nome']] = marker.getLatLng();
         var popup = marker.bindPopup(`${bts_json[bts]['nome']}`)
         markers.addLayer(marker);
 
@@ -96,6 +98,13 @@ async function queryIvynet(lat,lng,selectedBts){
     catch(e){
 
     }
+    console.log(bts_list_latlng[selectedBts]);
+    console.log(marker.getLatLng());
+    bearing = L.GeometryUtil.bearing(bts_list_latlng[selectedBts], marker.getLatLng());
+    if (bearing <0){
+        bearing = 360 + bearing;
+    }
+    console.log(`${bearing} degree`);
     layergroup=L.layerGroup([marker])
         .addTo(map);
     console.log(selectedBts);
@@ -105,6 +114,38 @@ async function queryIvynet(lat,lng,selectedBts){
     click_tecno = await response.json();
     console.log(click_tecno);
     document.getElementById('menu').innerHTML= `<p>${JSON.stringify(click_tecno)} @ lat ${lat} / lng ${lng}</p>`;
+    marker_tecnology = `tecno ${click_tecno['tecno'].split("").filter((char)=> char === "M").length}`;
+    sector_point=false
+    present_sector= false
+    for (single_sector in real_sectors){
+        console.log(marker_tecnology);
+        splitted_sector_definition=real_sectors[single_sector].split(';')
+        console.log(splitted_sector_definition);
+        if (splitted_sector_definition[0]==marker_tecnology){
+            present_sector=true;
+        }
+        if (bearing > splitted_sector_definition[1] && bearing < splitted_sector_definition[2] && marker_tecnology==splitted_sector_definition[0]){
+            sector_point= true;
+        }
+    }
+    console.log(sector_point);
+    if (!sector_point && present_sector){
+        console.log('Discrepancy!');
+        for (single_sector in real_sectors){
+            splitted_sector_definition=real_sectors[single_sector].split(';')
+            if (splitted_sector_definition[1]-bearing < 5 && splitted_sector_definition[1]-bearing >0 &&marker_tecnology==splitted_sector_definition[0]){
+                console.log(`extend sector counterclockwise from ${splitted_sector_definition[1]} to ${bearing}`);
+                var richiesta = window.confirm(`Discrepanza rilevata! Modificare l'inizio del settore da ${splitted_sector_definition[1]} a ${bearing}`);
+            }
+            if (bearing - splitted_sector_definition[2] < 5 && bearing - splitted_sector_definition[2] >0 &&  marker_tecnology==splitted_sector_definition[0]){
+                console.log(`extend sector clockwise from ${splitted_sector_definition[2]} to ${bearing}`);
+                var richiesta = window.confirm(`Discrepanza rilevata! Modificare la fine del settore da ${splitted_sector_definition[2]} a ${bearing}`);
+            }
+            console.log(richiesta);
+            // api request modificare settore
+            
+        }
+    }
 }
 async function getSectors(bts_name) {
     var sectors = await fetch(`https://eolo.zeromist.net/sectors/${bts_name}_sectors`,
@@ -185,6 +226,8 @@ async function onClick(e) {
         'tecno 2':'rgb(0,255,0)',
         'tecno 3':'rgb(0,0,255)',
     }
+    
+    real_sectors=[];
     if (tecnos_filtered != ":C") {
         for (let k = 0; k < tecnos_filtered.length; k++) {
             this_sector = tecnos_filtered[k].split(':')[1].split('-');
@@ -199,6 +242,7 @@ async function onClick(e) {
             else{
                 end_sector = tecnos_filtered[k].split(':')[1].split('-');
             }
+            real_sectors.push(`${tecnos_filtered[k].split(':')[0]};${parseInt(this_sector[0])};${parseInt(end_sector[1])}`);
             L.sector({
                 removable:true,
                 center: [e.latlng['lat'], e.latlng['lng']],
@@ -211,9 +255,12 @@ async function onClick(e) {
             }).addTo(map);
         }
     }
-
+    console.log(real_sectors);
     console.log(tecnos_filtered);
     console.log(this.options.name);
+    document.getElementById('id').innerHTML = `<p>${this.options.id}</p>`;
+    document.getElementById('name').innerHTML = `<p>${this.options.name}</p>`;
+
     document.getElementById('lat').innerHTML = `<p>${e.latlng['lat']}</p>`;
     document.getElementById('lng').innerHTML = `<p>${e.latlng['lng']}</p>`;
     document.getElementById('sec').innerHTML = `<p>${tecnos_filtered.join(" <br>")}</p>`;
