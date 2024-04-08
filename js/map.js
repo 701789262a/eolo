@@ -242,7 +242,12 @@ async function onClick(e) {
             else{
                 end_sector = tecnos_filtered[k].split(':')[1].split('-');
             }
+            if (parseInt(this_sector[0]) <=5){
+                this_sector[0] = 0;
+            }
+            
             real_sectors.push(`${tecnos_filtered[k].split(':')[0]};${parseInt(this_sector[0])};${parseInt(end_sector[1])}`);
+
             L.sector({
                 removable:true,
                 center: [e.latlng['lat'], e.latlng['lng']],
