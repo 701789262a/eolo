@@ -260,16 +260,40 @@ async function onClick(e) {
                     break;
             }
             console.log(`outer sect ${outer_sector}`);
-            L.sector({
-                removable:true,
-                center: [e.latlng['lat'], e.latlng['lng']],
-                innerRadius: 0,
-                outerRadius: outer_sector,
-                startBearing: parseInt(this_sector[0]),
-                endBearing: parseInt(end_sector[1]),
-                numberOfPoints: 100,
-                color: tecno_colors[tecnos_filtered[k].split(':')[0]]
-            }).addTo(map);
+            if (tecnos_filtered[k].split(':')[0] == 'tecno 3'){
+                L.sector({
+                    removable:true,
+                    center: [e.latlng['lat'], e.latlng['lng']],
+                    innerRadius: 0,
+                    outerRadius: 8000,
+                    startBearing: parseInt(this_sector[0]),
+                    endBearing: parseInt(end_sector[1]),
+                    numberOfPoints: 100,
+                    color: tecno_colors['tecno 3']
+                }).addTo(map);
+                L.sector({
+                    removable:true,
+                    center: [e.latlng['lat'], e.latlng['lng']],
+                    innerRadius: 8000,
+                    outerRadius: 25000,
+                    startBearing: parseInt(this_sector[0]),
+                    endBearing: parseInt(end_sector[1]),
+                    numberOfPoints: 100,
+                    color: tecno_colors['tecno 1']
+                }).addTo(map);
+            }else{
+                L.sector({
+                    removable:true,
+                    center: [e.latlng['lat'], e.latlng['lng']],
+                    innerRadius: 0,
+                    outerRadius: outer_sector,
+                    startBearing: parseInt(this_sector[0]),
+                    endBearing: parseInt(end_sector[1]),
+                    numberOfPoints: 100,
+                    color: tecno_colors[tecnos_filtered[k].split(':')[0]]
+                }).addTo(map);
+            }
+
         }
     }
     console.log(real_sectors);
