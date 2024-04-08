@@ -245,14 +245,25 @@ async function onClick(e) {
             if (parseInt(this_sector[0]) <=5){
                 this_sector[0] = 0;
             }
-            
+            outer_sector = 10000;
             real_sectors.push(`${tecnos_filtered[k].split(':')[0]};${parseInt(this_sector[0])};${parseInt(end_sector[1])}`);
-
+            switch (tecnos_filtered[k].split(':')[0]){
+                case 'tecno 1':
+                    outer_sector = 25000;
+                    break;
+                
+                case 'tecno 2':
+                    outer_sector = 8000;
+                    break;
+                case 'tecno 3':
+                    outer_sector = 23000;
+                    break;
+            }
             L.sector({
                 removable:true,
                 center: [e.latlng['lat'], e.latlng['lng']],
                 innerRadius: 0,
-                outerRadius: 10000+ (tecnos_filtered[k].split(':')[0].split(" ")[1])*500,
+                outerRadius: outer_sector,
                 startBearing: parseInt(this_sector[0]),
                 endBearing: parseInt(end_sector[1]),
                 numberOfPoints: 100,
