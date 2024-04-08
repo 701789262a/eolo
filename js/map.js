@@ -259,6 +259,7 @@ async function onClick(e) {
                     outer_sector = 23000;
                     break;
             }
+            console.log(`outer sect ${outer_sector}`);
             L.sector({
                 removable:true,
                 center: [e.latlng['lat'], e.latlng['lng']],
