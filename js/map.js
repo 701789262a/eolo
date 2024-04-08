@@ -232,11 +232,16 @@ async function onClick(e) {
         for (let k = 0; k < tecnos_filtered.length; k++) {
             this_sector = tecnos_filtered[k].split(':')[1].split('-');
             if (this_sector[1]==0){
-                if (tecnos_filtered[k].split(':')[0] == tecnos_filtered[k+1].split(':')[0]){
-                    end_sector[1] = tecnos_filtered[k+1].split(':')[1].split('-');
-                }else{
+                try{
+                    if (tecnos_filtered[k].split(':')[0] == tecnos_filtered[k+1].split(':')[0]){
+                        end_sector[1] = tecnos_filtered[k+1].split(':')[1].split('-');
+                    }else{
+                        end_sector[1]=360;
+                    }
+                }catch(e){
                     end_sector[1]=360;
                 }
+                
 
             }
             else{
