@@ -1,0 +1,1541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="624995">
+        <Placemark id="624997">
+            <name>0</name>
+            <Point id="624996">
+                <coordinates>9.6839557003689,40.543246163095155,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="624999">
+            <name>0</name>
+            <Point id="624998">
+                <coordinates>9.683894621850413,40.53724061915275,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625001">
+            <name>0</name>
+            <Point id="625000">
+                <coordinates>9.683925158810407,40.54024339191627,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625003">
+            <name>0</name>
+            <Point id="625002">
+                <coordinates>9.683864089488134,40.534237844804636,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625005">
+            <name>0</name>
+            <Point id="625004">
+                <coordinates>9.683986246526668,40.54624893268939,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625007">
+            <name>1</name>
+            <Point id="625006">
+                <coordinates>9.6840167972845,40.549251700698946,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625009">
+            <name>1</name>
+            <Point id="625008">
+                <coordinates>9.684047352643173,40.552254467123795,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625011">
+            <name>1</name>
+            <Point id="625010">
+                <coordinates>9.684108477166179,40.55825999521927,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625013">
+            <name>3</name>
+            <Point id="625012">
+                <coordinates>9.684139046332076,40.561262756889825,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625015">
+            <name>1</name>
+            <Point id="625014">
+                <coordinates>9.684077912603472,40.555257231963914,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625017">
+            <name>0</name>
+            <Point id="625016">
+                <coordinates>9.684200198476576,40.56726827547645,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625019">
+            <name>3</name>
+            <Point id="625018">
+                <coordinates>9.684169620101947,40.56426551697555,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625021">
+            <name>3</name>
+            <Point id="625020">
+                <coordinates>9.684230781456744,40.570271032392455,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625023">
+            <name>2</name>
+            <Point id="625022">
+                <coordinates>9.684261369043238,40.573273787723565,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625025">
+            <name>2</name>
+            <Point id="625024">
+                <coordinates>9.684291961236838,40.576276541469724,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625027">
+            <name>0</name>
+            <Point id="625026">
+                <coordinates>9.687799693882162,40.534214484067284,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625029">
+            <name>0</name>
+            <Point id="625028">
+                <coordinates>9.68432255803833,40.579279293630925,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625031">
+            <name>0</name>
+            <Point id="625030">
+                <coordinates>9.687830401923026,40.537217255952875,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625033">
+            <name>0</name>
+            <Point id="625032">
+                <coordinates>9.687861114588054,40.540220026253664,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625035">
+            <name>0</name>
+            <Point id="625034">
+                <coordinates>9.687891831878034,40.54322279496959,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625037">
+            <name>0</name>
+            <Point id="625036">
+                <coordinates>9.68792255379375,40.54622556210066,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625039">
+            <name>0</name>
+            <Point id="625038">
+                <coordinates>9.687953280335995,40.54922832764684,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625041">
+            <name>1</name>
+            <Point id="625040">
+                <coordinates>9.687984011505547,40.55223109160807,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625043">
+            <name>1</name>
+            <Point id="625042">
+                <coordinates>9.688014747303196,40.55523385398438,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625045">
+            <name>3</name>
+            <Point id="625044">
+                <coordinates>9.688045487729733,40.55823661477569,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625047">
+            <name>3</name>
+            <Point id="625046">
+                <coordinates>9.688076232785939,40.56123937398199,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625049">
+            <name>3</name>
+            <Point id="625048">
+                <coordinates>9.688137736790521,40.56724488763945,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625051">
+            <name>3</name>
+            <Point id="625050">
+                <coordinates>9.688106982472608,40.564242131603244,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625053">
+            <name>3</name>
+            <Point id="625052">
+                <coordinates>9.688168495740472,40.57024764209055,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625055">
+            <name>2</name>
+            <Point id="625054">
+                <coordinates>9.688199259323246,40.573250394956524,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625057">
+            <name>2</name>
+            <Point id="625056">
+                <coordinates>9.688230027539634,40.57625314623735,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625059">
+            <name>2</name>
+            <Point id="625058">
+                <coordinates>9.68826080039042,40.579255895933,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625061">
+            <name>0</name>
+            <Point id="625060">
+                <coordinates>9.69173529365281,40.534190989293386,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625063">
+            <name>0</name>
+            <Point id="625062">
+                <coordinates>9.691766177371472,40.537193758702344,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625065">
+            <name>0</name>
+            <Point id="625064">
+                <coordinates>9.691797065740749,40.54019652652626,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625067">
+            <name>0</name>
+            <Point id="625066">
+                <coordinates>9.691827958761431,40.54319929276512,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625069">
+            <name>0</name>
+            <Point id="625068">
+                <coordinates>9.691858856434308,40.546202057418874,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625071">
+            <name>0</name>
+            <Point id="625070">
+                <coordinates>9.691889758760176,40.54920482048754,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625073">
+            <name>1</name>
+            <Point id="625072">
+                <coordinates>9.691920665739818,40.55220758197104,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625075">
+            <name>3</name>
+            <Point id="625074">
+                <coordinates>9.691982493663613,40.55821310018252,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625077">
+            <name>1</name>
+            <Point id="625076">
+                <coordinates>9.691951577374034,40.55521034186939,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625079">
+            <name>0</name>
+            <Point id="625078">
+                <coordinates>9.692013414609342,40.56121585691043,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625081">
+            <name>3</name>
+            <Point id="625080">
+                <coordinates>9.692044340212018,40.56421861205308,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625083">
+            <name>3</name>
+            <Point id="625082">
+                <coordinates>9.692075270472431,40.56722136561044,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625085">
+            <name>2</name>
+            <Point id="625084">
+                <coordinates>9.692106205391376,40.570224117582505,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625087">
+            <name>2</name>
+            <Point id="625086">
+                <coordinates>9.692168089208026,40.57622961677055,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625089">
+            <name>2</name>
+            <Point id="625088">
+                <coordinates>9.692199038107319,40.57923236398648,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625091">
+            <name>2</name>
+            <Point id="625090">
+                <coordinates>9.692137144969644,40.57322686796921,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625093">
+            <name>0</name>
+            <Point id="625092">
+                <coordinates>9.695764080992632,40.54317565648216,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625095">
+            <name>0</name>
+            <Point id="625094">
+                <coordinates>9.69582623253058,40.54918117922152,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625097">
+            <name>0</name>
+            <Point id="625096">
+                <coordinates>9.695670888773636,40.53416736048344,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625099">
+            <name>0</name>
+            <Point id="625098">
+                <coordinates>9.695733012242039,40.54017289273453,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625101">
+            <name>0</name>
+            <Point id="625100">
+                <coordinates>9.695701948169306,40.5371701274016,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625103">
+            <name>0</name>
+            <Point id="625102">
+                <coordinates>9.69579515442188,40.5461784186445,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625105">
+            <name>1</name>
+            <Point id="625104">
+                <coordinates>9.695888402789514,40.555186695619405,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625107">
+            <name>0</name>
+            <Point id="625106">
+                <coordinates>9.695857315319525,40.55218393821316,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625109">
+            <name>3</name>
+            <Point id="625108">
+                <coordinates>9.69591949494134,40.55818945144023,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625111">
+            <name>3</name>
+            <Point id="625110">
+                <coordinates>9.695981693293692,40.564194958325494,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625113">
+            <name>0</name>
+            <Point id="625112">
+                <coordinates>9.695950591775802,40.5611922056756,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625115">
+            <name>2</name>
+            <Point id="625114">
+                <coordinates>9.696012799495813,40.5671977093899,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625117">
+            <name>2</name>
+            <Point id="625116">
+                <coordinates>9.69604391038296,40.57020045886877,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625119">
+            <name>2</name>
+            <Point id="625118">
+                <coordinates>9.696075025955928,40.57320320676205,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625121">
+            <name>2</name>
+            <Point id="625120">
+                <coordinates>9.696106146215513,40.57620595306976,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625123">
+            <name>3</name>
+            <Point id="625122">
+                <coordinates>9.696137271162518,40.57920869779185,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625125">
+            <name>0</name>
+            <Point id="625124">
+                <coordinates>9.699606479218193,40.53414359763786,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625127">
+            <name>0</name>
+            <Point id="625126">
+                <coordinates>9.699637714290073,40.53714636205114,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625129">
+            <name>0</name>
+            <Point id="625128">
+                <coordinates>9.699700198545179,40.543151886121244,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625131">
+            <name>0</name>
+            <Point id="625130">
+                <coordinates>9.69966895406547,40.54014912487894,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625133">
+            <name>0</name>
+            <Point id="625132">
+                <coordinates>9.699762701620738,40.54915740384923,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625135">
+            <name>0</name>
+            <Point id="625134">
+                <coordinates>9.69973144773,40.54615464577801,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625137">
+            <name>1</name>
+            <Point id="625136">
+                <coordinates>9.699793960218187,40.552160160334864,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625139">
+            <name>3</name>
+            <Point id="625138">
+                <coordinates>9.699856491536432,40.558165668549265,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625141">
+            <name>0</name>
+            <Point id="625140">
+                <coordinates>9.699825223523153,40.555162915234895,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625143">
+            <name>3</name>
+            <Point id="625142">
+                <coordinates>9.699887764258827,40.56116842027798,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625145">
+            <name>0</name>
+            <Point id="625144">
+                <coordinates>9.699919041691139,40.564171170420984,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625147">
+            <name>2</name>
+            <Point id="625146">
+                <coordinates>9.69995032383417,40.567173918978284,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625149">
+            <name>2</name>
+            <Point id="625148">
+                <coordinates>9.699981610688718,40.57017666594981,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625151">
+            <name>3</name>
+            <Point id="625150">
+                <coordinates>9.700012902255589,40.573179411335545,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625153">
+            <name>3</name>
+            <Point id="625152">
+                <coordinates>9.700044198535583,40.576182155135484,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625155">
+            <name>3</name>
+            <Point id="625154">
+                <coordinates>9.7000754995295,40.57918489734957,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625157">
+            <name>0</name>
+            <Point id="625156">
+                <coordinates>9.703542064960033,40.53411970075714,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625159">
+            <name>0</name>
+            <Point id="625158">
+                <coordinates>9.703604891184584,40.54012522295994,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625161">
+            <name>0</name>
+            <Point id="625160">
+                <coordinates>9.703573475707326,40.53712246265138,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625163">
+            <name>0</name>
+            <Point id="625162">
+                <coordinates>9.70363631139261,40.54312798168277,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625165">
+            <name>0</name>
+            <Point id="625164">
+                <coordinates>9.703667736332207,40.54613073881985,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625167">
+            <name>1</name>
+            <Point id="625166">
+                <coordinates>9.703730600409335,40.55213624833665,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625169">
+            <name>0</name>
+            <Point id="625168">
+                <coordinates>9.703699166004181,40.54913349437116,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625171">
+            <name>1</name>
+            <Point id="625170">
+                <coordinates>9.703762039548476,40.55513900071632,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625173">
+            <name>3</name>
+            <Point id="625172">
+                <coordinates>9.703793483422407,40.55814175151012,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625175">
+            <name>2</name>
+            <Point id="625174">
+                <coordinates>9.703856385377867,40.56414724834,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625177">
+            <name>2</name>
+            <Point id="625176">
+                <coordinates>9.703887843461004,40.56714999437604,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625179">
+            <name>3</name>
+            <Point id="625178">
+                <coordinates>9.703824932031935,40.561144500718015,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625181">
+            <name>3</name>
+            <Point id="625180">
+                <coordinates>9.703919306282156,40.570152738826096,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625183">
+            <name>3</name>
+            <Point id="625182">
+                <coordinates>9.703950773842127,40.573155481690144,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625185">
+            <name>3</name>
+            <Point id="625184">
+                <coordinates>9.703982246141726,40.57615822296816,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625187">
+            <name>3</name>
+            <Point id="625186">
+                <coordinates>9.704013723181758,40.579160962660104,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625189">
+            <name>0</name>
+            <Point id="625188">
+                <coordinates>9.707540823572934,40.540101186978006,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625191">
+            <name>0</name>
+            <Point id="625190">
+                <coordinates>9.707477645972714,40.53409566984173,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625193">
+            <name>0</name>
+            <Point id="625192">
+                <coordinates>9.707509232394617,40.53709842920283,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625195">
+            <name>0</name>
+            <Point id="625194">
+                <coordinates>9.707572419508471,40.54310394316724,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625197">
+            <name>0</name>
+            <Point id="625196">
+                <coordinates>9.707604020202039,40.54610669777048,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625199">
+            <name>1</name>
+            <Point id="625198">
+                <coordinates>9.707667235866499,40.55211220221898,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625201">
+            <name>1</name>
+            <Point id="625200">
+                <coordinates>9.70769885083901,40.55511495206415,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625203">
+            <name>0</name>
+            <Point id="625202">
+                <coordinates>9.707635625654444,40.54910945078776,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625205">
+            <name>3</name>
+            <Point id="625204">
+                <coordinates>9.707730470572788,40.55811770032324,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625207">
+            <name>2</name>
+            <Point id="625206">
+                <coordinates>9.707762095068645,40.56112044699619,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625209">
+            <name>3</name>
+            <Point id="625208">
+                <coordinates>9.707793724327388,40.564123192083,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625211">
+            <name>3</name>
+            <Point id="625210">
+                <coordinates>9.707825358349828,40.56712593558366,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625213">
+            <name>3</name>
+            <Point id="625212">
+                <coordinates>9.707856997136776,40.5701286774981,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625215">
+            <name>3</name>
+            <Point id="625214">
+                <coordinates>9.707888640689042,40.57313141782631,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625217">
+            <name>3</name>
+            <Point id="625216">
+                <coordinates>9.707920289007438,40.576134156568266,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625219">
+            <name>3</name>
+            <Point id="625218">
+                <coordinates>9.707951942092773,40.57913689372393,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625221">
+            <name>0</name>
+            <Point id="625220">
+                <coordinates>9.711413222229792,40.53407150489212,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625223">
+            <name>0</name>
+            <Point id="625222">
+                <coordinates>9.711444984325496,40.53707426170594,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625225">
+            <name>0</name>
+            <Point id="625224">
+                <coordinates>9.711476751204062,40.5400770169336,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625227">
+            <name>0</name>
+            <Point id="625226">
+                <coordinates>9.711508522866302,40.54307977057511,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625229">
+            <name>0</name>
+            <Point id="625228">
+                <coordinates>9.71154029931303,40.54608252263042,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625231">
+            <name>0</name>
+            <Point id="625230">
+                <coordinates>9.711603866563204,40.552088021982314,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625233">
+            <name>0</name>
+            <Point id="625232">
+                <coordinates>9.711572080545059,40.5490852730995,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625235">
+            <name>1</name>
+            <Point id="625234">
+                <coordinates>9.711635657368276,40.55509076927886,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625237">
+            <name>3</name>
+            <Point id="625236">
+                <coordinates>9.711667452961091,40.55809351498908,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625239">
+            <name>3</name>
+            <Point id="625238">
+                <coordinates>9.711699253342466,40.561096259112965,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625241">
+            <name>3</name>
+            <Point id="625240">
+                <coordinates>9.711762868474143,40.567101742601594,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625243">
+            <name>3</name>
+            <Point id="625242">
+                <coordinates>9.71173105851321,40.564099001650476,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625245">
+            <name>0</name>
+            <Point id="625244">
+                <coordinates>9.711794683226076,40.57010448196629,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625247">
+            <name>3</name>
+            <Point id="625246">
+                <coordinates>9.711858327106208,40.57610995593627,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625249">
+            <name>3</name>
+            <Point id="625248">
+                <coordinates>9.711826502769826,40.57310721974452,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625251">
+            <name>0</name>
+            <Point id="625250">
+                <coordinates>9.71534879370482,40.53404720590877,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625253">
+            <name>3</name>
+            <Point id="625252">
+                <coordinates>9.71189015623604,40.57911269054149,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625255">
+            <name>0</name>
+            <Point id="625254">
+                <coordinates>9.715380731473513,40.537049960161184,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625257">
+            <name>0</name>
+            <Point id="625256">
+                <coordinates>9.715412674051514,40.54005271282722,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625259">
+            <name>0</name>
+            <Point id="625258">
+                <coordinates>9.715444621439644,40.54305546390687,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625261">
+            <name>0</name>
+            <Point id="625260">
+                <coordinates>9.71547657363872,40.54605821340007,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625263">
+            <name>0</name>
+            <Point id="625262">
+                <coordinates>9.71550853064956,40.54906096130685,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625265">
+            <name>0</name>
+            <Point id="625264">
+                <coordinates>9.715540492472979,40.55206370762714,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625267">
+            <name>0</name>
+            <Point id="625266">
+                <coordinates>9.715572459109799,40.55506645236091,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625269">
+            <name>0</name>
+            <Point id="625268">
+                <coordinates>9.715604430560838,40.55806919550815,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625271">
+            <name>3</name>
+            <Point id="625270">
+                <coordinates>9.715636406826913,40.56107193706882,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625273">
+            <name>3</name>
+            <Point id="625272">
+                <coordinates>9.715668387908845,40.56407467704288,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625275">
+            <name>3</name>
+            <Point id="625274">
+                <coordinates>9.715732364523559,40.57008015223113,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625277">
+            <name>3</name>
+            <Point id="625276">
+                <coordinates>9.715700373807454,40.56707741543033,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625279">
+            <name>3</name>
+            <Point id="625278">
+                <coordinates>9.715764360057978,40.57308288744524,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625281">
+            <name>3</name>
+            <Point id="625280">
+                <coordinates>9.71582836558504,40.57908835311329,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625283">
+            <name>3</name>
+            <Point id="625282">
+                <coordinates>9.715796360411531,40.576085621072636,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625285">
+            <name>0</name>
+            <Point id="625284">
+                <coordinates>9.719284360371358,40.534022772892165,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625287">
+            <name>0</name>
+            <Point id="625286">
+                <coordinates>9.71931647381222,40.53702552456904,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625289">
+            <name>0</name>
+            <Point id="625288">
+                <coordinates>9.719348592088842,40.54002827465931,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625291">
+            <name>0</name>
+            <Point id="625290">
+                <coordinates>9.719380715202043,40.543031023162975,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625293">
+            <name>0</name>
+            <Point id="625292">
+                <coordinates>9.719412843152648,40.546033770079966,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625295">
+            <name>0</name>
+            <Point id="625294">
+                <coordinates>9.719444975941476,40.5490365154103,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625297">
+            <name>0</name>
+            <Point id="625296">
+                <coordinates>9.719477113569354,40.55203925915391,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625299">
+            <name>0</name>
+            <Point id="625298">
+                <coordinates>9.719509256037103,40.555042001310795,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625301">
+            <name>0</name>
+            <Point id="625300">
+                <coordinates>9.719541403345547,40.558044741880906,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625303">
+            <name>0</name>
+            <Point id="625302">
+                <coordinates>9.719573555495506,40.56104748086421,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625305">
+            <name>3</name>
+            <Point id="625304">
+                <coordinates>9.719605712487807,40.564050218260704,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625307">
+            <name>3</name>
+            <Point id="625306">
+                <coordinates>9.719637874323272,40.56705295407034,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625309">
+            <name>0</name>
+            <Point id="625308">
+                <coordinates>9.719670041002727,40.5700556882931,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625311">
+            <name>3</name>
+            <Point id="625310">
+                <coordinates>9.719702212526995,40.57305842092895,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625313">
+            <name>3</name>
+            <Point id="625312">
+                <coordinates>9.7197343888969,40.57606115197786,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625315">
+            <name>0</name>
+            <Point id="625314">
+                <coordinates>9.723219922202958,40.53399820584277,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625317">
+            <name>3</name>
+            <Point id="625316">
+                <coordinates>9.719766570113265,40.579063881439794,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625319">
+            <name>0</name>
+            <Point id="625318">
+                <coordinates>9.72325221131517,40.53700095492998,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625321">
+            <name>0</name>
+            <Point id="625320">
+                <coordinates>9.723284505289588,40.540003702430376,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625323">
+            <name>0</name>
+            <Point id="625322">
+                <coordinates>9.72334910782835,40.54600919267057,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625325">
+            <name>0</name>
+            <Point id="625324">
+                <coordinates>9.723316804127037,40.54300644834391,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625327">
+            <name>0</name>
+            <Point id="625326">
+                <coordinates>9.723381416394348,40.54901193541031,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625329">
+            <name>0</name>
+            <Point id="625328">
+                <coordinates>9.723413729825861,40.552014676563125,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625331">
+            <name>0</name>
+            <Point id="625330">
+                <coordinates>9.723446048123714,40.55501741612897,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625333">
+            <name>0</name>
+            <Point id="625332">
+                <coordinates>9.723478371288737,40.55802015410783,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625335">
+            <name>2</name>
+            <Point id="625334">
+                <coordinates>9.723510699321759,40.56102289049964,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625337">
+            <name>3</name>
+            <Point id="625336">
+                <coordinates>9.723575369995102,40.56702835852211,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625339">
+            <name>0</name>
+            <Point id="625338">
+                <coordinates>9.723607712637085,40.570031090152696,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625341">
+            <name>3</name>
+            <Point id="625340">
+                <coordinates>9.723543032223604,40.56402562530441,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625343">
+            <name>0</name>
+            <Point id="625342">
+                <coordinates>9.727155479173177,40.53397350476108,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625345">
+            <name>3</name>
+            <Point id="625344">
+                <coordinates>9.723704769794207,40.57903927552149,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625347">
+            <name>0</name>
+            <Point id="625346">
+                <coordinates>9.727187943955911,40.536976251244496,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625349">
+            <name>0</name>
+            <Point id="625348">
+                <coordinates>9.7272204136273,40.539978996140874,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625351">
+            <name>0</name>
+            <Point id="625350">
+                <coordinates>9.727252888188174,40.542981739450155,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625353">
+            <name>3</name>
+            <Point id="625352">
+                <coordinates>9.723640060150375,40.57303382019614,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625355">
+            <name>0</name>
+            <Point id="625354">
+                <coordinates>9.727285367639363,40.54598448117233,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625357">
+            <name>3</name>
+            <Point id="625356">
+                <coordinates>9.723672412535807,40.57603654865241,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625359">
+            <name>0</name>
+            <Point id="625358">
+                <coordinates>9.727317851981704,40.548987221307385,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625361">
+            <name>0</name>
+            <Point id="625360">
+                <coordinates>9.727350341216022,40.55198995985525,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625363">
+            <name>0</name>
+            <Point id="625362">
+                <coordinates>9.72741533436393,40.557995432189394,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625365">
+            <name>0</name>
+            <Point id="625364">
+                <coordinates>9.727382835343155,40.554992696815944,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625367">
+            <name>2</name>
+            <Point id="625366">
+                <coordinates>9.727447838279183,40.56099816597559,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625369">
+            <name>2</name>
+            <Point id="625368">
+                <coordinates>9.727480347089745,40.56400089817449,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625371">
+            <name>0</name>
+            <Point id="625370">
+                <coordinates>9.727545379400128,40.57000635781037,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625373">
+            <name>0</name>
+            <Point id="625372">
+                <coordinates>9.727512860796448,40.56700362878612,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625375">
+            <name>3</name>
+            <Point id="625374">
+                <coordinates>9.727610431301745,40.57601181109677,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625377">
+            <name>0</name>
+            <Point id="625376">
+                <coordinates>9.727577902901615,40.573009085247264,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625379">
+            <name>3</name>
+            <Point id="625378">
+                <coordinates>9.727642964601348,40.579014535358844,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625381">
+            <name>0</name>
+            <Point id="625380">
+                <coordinates>9.731123671708,40.536951413513066,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625383">
+            <name>0</name>
+            <Point id="625382">
+                <coordinates>9.731156317075525,40.53995415579129,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625385">
+            <name>0</name>
+            <Point id="625384">
+                <coordinates>9.73118896735899,40.54295689648219,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625387">
+            <name>0</name>
+            <Point id="625386">
+                <coordinates>9.73125428267708,40.548962373101986,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625389">
+            <name>0</name>
+            <Point id="625388">
+                <coordinates>9.731319617668952,40.55496784337216,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625391">
+            <name>0</name>
+            <Point id="625390">
+                <coordinates>9.731091031255575,40.53394866964755,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625393">
+            <name>0</name>
+            <Point id="625392">
+                <coordinates>9.73122162255923,40.545959635585774,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625395">
+            <name>0</name>
+            <Point id="625394">
+                <coordinates>9.731286947713373,40.551965109030775,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625397">
+            <name>0</name>
+            <Point id="625396">
+                <coordinates>9.731352292544647,40.55797057612609,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625399">
+            <name>2</name>
+            <Point id="625398">
+                <coordinates>9.731384972341301,40.56097330729252,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625401">
+            <name>2</name>
+            <Point id="625400">
+                <coordinates>9.731417657059746,40.56397603687144,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625403">
+            <name>0</name>
+            <Point id="625402">
+                <coordinates>9.731483041265365,40.56998149126663,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625405">
+            <name>0</name>
+            <Point id="625404">
+                <coordinates>9.731450346700822,40.56697876486283,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625407">
+            <name>0</name>
+            <Point id="625406">
+                <coordinates>9.731515740754215,40.57298421608284,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625409">
+            <name>0</name>
+            <Point id="625408">
+                <coordinates>9.731548445168206,40.57598693931142,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625411">
+            <name>0</name>
+            <Point id="625410">
+                <coordinates>9.73158115450818,40.57898966095234,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625413">
+            <name>0</name>
+            <Point id="625412">
+                <coordinates>9.735059394544985,40.53692644173616,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625415">
+            <name>0</name>
+            <Point id="625414">
+                <coordinates>9.735026578423705,40.5339237005027,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625417">
+            <name>0</name>
+            <Point id="625416">
+                <coordinates>9.735092215607816,40.53992918138212,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625419">
+            <name>0</name>
+            <Point id="625418">
+                <coordinates>9.735125041613037,40.54293191944053,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625421">
+            <name>0</name>
+            <Point id="625420">
+                <coordinates>9.735157872561487,40.54593465591135,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625423">
+            <name>0</name>
+            <Point id="625422">
+                <coordinates>9.73519070845401,40.5489373907946,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625425">
+            <name>0</name>
+            <Point id="625424">
+                <coordinates>9.735223549291442,40.551940124090194,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625427">
+            <name>0</name>
+            <Point id="625426">
+                <coordinates>9.73525639507463,40.55494285579814,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625429">
+            <name>0</name>
+            <Point id="625428">
+                <coordinates>9.735322101481623,40.560948314450926,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625431">
+            <name>0</name>
+            <Point id="625430">
+                <coordinates>9.73528924580441,40.5579455859184,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625433">
+            <name>2</name>
+            <Point id="625432">
+                <coordinates>9.735354962107117,40.56395104139572,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625435">
+            <name>0</name>
+            <Point id="625434">
+                <coordinates>9.735486454108688,40.575961933296846,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625437">
+            <name>0</name>
+            <Point id="625436">
+                <coordinates>9.735387827681727,40.56695376675274,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625439">
+            <name>0</name>
+            <Point id="625438">
+                <coordinates>9.735519339488196,40.57896465230247,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625441">
+            <name>0</name>
+            <Point id="625440">
+                <coordinates>9.738962120651124,40.53389859732698,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625443">
+            <name>0</name>
+            <Point id="625442">
+                <coordinates>9.73899511244042,40.53690133591429,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625445">
+            <name>0</name>
+            <Point id="625444">
+                <coordinates>9.739028109197713,40.53990407291384,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625447">
+            <name>0</name>
+            <Point id="625446">
+                <coordinates>9.73906111092385,40.54290680832562,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625449">
+            <name>0</name>
+            <Point id="625448">
+                <coordinates>9.73545357368167,40.572959212703324,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625451">
+            <name>0</name>
+            <Point id="625450">
+                <coordinates>9.739094117619672,40.54590954214958,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625453">
+            <name>0</name>
+            <Point id="625452">
+                <coordinates>9.735420698206298,40.56995649052195,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625455">
+            <name>0</name>
+            <Point id="625454">
+                <coordinates>9.739160145923758,40.55191500503398,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625457">
+            <name>0</name>
+            <Point id="625456">
+                <coordinates>9.739193167533712,40.55491773409436,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625459">
+            <name>0</name>
+            <Point id="625458">
+                <coordinates>9.739226194116736,40.557920461566816,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625461">
+            <name>0</name>
+            <Point id="625460">
+                <coordinates>9.739127129286025,40.54891227438572,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625463">
+            <name>0</name>
+            <Point id="625462">
+                <coordinates>9.73925922567367,40.56092318745131,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625465">
+            <name>0</name>
+            <Point id="625464">
+                <coordinates>9.739292262205366,40.563925911747816,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625467">
+            <name>0</name>
+            <Point id="625466">
+                <coordinates>9.739358350196424,40.56993135557683,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625469">
+            <name>0</name>
+            <Point id="625468">
+                <coordinates>9.73939140165748,40.572934075109224,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625471">
+            <name>0</name>
+            <Point id="625470">
+                <coordinates>9.739325303712668,40.566928634456346,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625473">
+            <name>0</name>
+            <Point id="625472">
+                <coordinates>9.739424458096682,40.57593679305354,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625475">
+            <name>0</name>
+            <Point id="625474">
+                <coordinates>9.74289765791139,40.53387336012093,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625477">
+            <name>0</name>
+            <Point id="625476">
+                <coordinates>9.739457519514877,40.578939509409736,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625479">
+            <name>0</name>
+            <Point id="625478">
+                <coordinates>9.74296399781877,40.539878830386954,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625481">
+            <name>0</name>
+            <Point id="625480">
+                <coordinates>9.742930825367859,40.53687609604793,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625483">
+            <name>0</name>
+            <Point id="625482">
+                <coordinates>9.742997175264977,40.54288156313797,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625485">
+            <name>0</name>
+            <Point id="625484">
+                <coordinates>9.743063545146669,40.54888702387584,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625487">
+            <name>0</name>
+            <Point id="625486">
+                <coordinates>9.743030357707326,40.54588429430093,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625489">
+            <name>0</name>
+            <Point id="625488">
+                <coordinates>9.743096737583851,40.55188975186263,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625491">
+            <name>0</name>
+            <Point id="625490">
+                <coordinates>9.743129935019729,40.55489247826132,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625493">
+            <name>0</name>
+            <Point id="625492">
+                <coordinates>9.743163137455147,40.55789520307182,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625495">
+            <name>0</name>
+            <Point id="625494">
+                <coordinates>9.743196344890958,40.56089792629416,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625497">
+            <name>0</name>
+            <Point id="625496">
+                <coordinates>9.743229557328013,40.563900647928264,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625499">
+            <name>0</name>
+            <Point id="625498">
+                <coordinates>9.743262774767162,40.56690336797414,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625501">
+            <name>0</name>
+            <Point id="625500">
+                <coordinates>9.743295997209255,40.569906086431736,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625503">
+            <name>0</name>
+            <Point id="625502">
+                <coordinates>9.743362457105682,40.575911518582,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625505">
+            <name>0</name>
+            <Point id="625504">
+                <coordinates>9.743329224655145,40.572908803301026,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="625507">
+            <name>0</name>
+            <Point id="625506">
+                <coordinates>9.74339569456172,40.5789142322746,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
