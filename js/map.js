@@ -147,8 +147,8 @@ async function queryIvynet(lat,lng,selectedBts){
         }
     }
 }
-async function getSectors(bts_name) {
-    var sectors = await fetch(`https://eolo.zeromist.net/sectors/${bts_name}_sectors`,
+async function getSectors(bts_name,bts_lat,bts_lng) {
+    var sectors = await fetch(`https://eolosector.zeromist.net/getsector/?bts=${bts_name}&bts_lat=${bts_lat}&bts_lng=${bts_lng}`,
         {
             mode: "cors", method: "GET", headers: {
                 "Content-Type": "application/json",
@@ -159,6 +159,7 @@ async function getSectors(bts_name) {
         return 0;
     }
     sekt = await sectors.json();
+    print(`sekt ${sekt}`);
     return sekt;
 }
 async function onClick(e) {
@@ -179,7 +180,7 @@ async function onClick(e) {
         })
         .then(function (arrayBuffer) {
             parseGeoraster(arrayBuffer).then(function (georaster) {
-                var scale = chroma.scale(["green", "yellow", "orange", "red"]).domain([-20, 99]);
+                var scale = chroma.scale(["green", "yellow", "orange","orange","orange","orange", "red"]).domain([-20, 99]);
                 var layer = new GeoRasterLayer({
                     removable:true,
                     opacity: 0.5,
@@ -207,7 +208,7 @@ async function onClick(e) {
     //   'L', [41.041757, 8.8791],
 
     //    'Z'], { animate: 3000, renderer: canvasRenderer }).addTo(map);
-    sesso = await getSectors(this.options.name);
+    sesso = await getSectors(this.options.name,e.latlng['lat'], e.latlng['lng']);
 
     console.log(sesso);
     tecnos_filtered = []
