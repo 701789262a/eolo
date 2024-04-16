@@ -165,6 +165,29 @@ async function getSectors(bts_name,bts_lat,bts_lng) {
     console.log(`sekt ${JSON.stringify(sekt)}`);
     return (sekt);
 }
+
+const textInput = document.getElementById('input');
+
+textInput.addEventListener('keydown', async function(event) {
+    if (event.key === 'Enter') {
+        console.log(textInput.value);
+        var bts_list = await fetch("https://eolo.zeromist.net/lista_bts.json",
+        {
+            mode: "cors", method: "GET", headers: {
+                "Content-Type": "application/json",
+            },
+        }
+        );
+        bts_json = await bts_list.json();
+        for (bts in bts_json){
+            if ((bts_json[bts]['nome'].toLowerCase() == textInput.value.toLowerCase() )|| (bts_json[bts]['id']== textInput.value.toLowerCase())){
+                console.log(`${[bts_json[bts]['lat'], bts_json[bts]['lng']]}`);
+                map.flyTo([bts_json[bts]['lat'], bts_json[bts]['lng']], 15);
+            }
+        }
+    }
+});
+
 async function updateSectorsOnDiscrepancy(e, selectedBts){
     map.eachLayer(function(layer){
         if (layer['options']['removable']===true && layer['options']['map']===false){

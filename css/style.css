@@ -87,7 +87,32 @@ body {
     margin: 0 auto;
     padding:2px;
 }
-
+::placeholder {
+    color: lightgray;
+    font-size: 12;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: 1; /* Firefox */
+  }
+.input {
+    
+    height: 25;
+    width: 290;
+      left: 0;
+      top: 0;
+      background: grey;
+      white-space: nowrap;
+      transform: translate(0, 0);
+      transform-origin: 0 0;
+      transition: transform 120ms ease-in;
+      font-weight: bold;
+      line-height: 1.2;
+      box-sizing: border-box;
+      display: block;
+      border: 3px solid currentColor;
+      color: currentColor;
+      border-radius: var(--size-radius);
+    }
+  
 .col1 {
     width:30%;
     float:left;
