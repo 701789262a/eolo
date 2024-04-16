@@ -24,7 +24,7 @@ map.on('click',function(e){
         if (f.ctrlKey && selectedBts!="") {
            //alert("ctr key was pressed during the click");
            console.log(e);
-           await queryIvynet(e['latlng']['lat'],e['latlng']['lng'],selectedBts);
+           await queryIvynet(e['latlng']['lat'],e['latlng']['lng'],selectedBts,bts_list_latlng);
         }
     }
 });
@@ -88,7 +88,8 @@ const redIcon = new L.Icon({
     shadowSize: [41, 41]
   });
 
-async function queryIvynet(lat,lng,selectedBts){
+async function queryIvynet(lat,lng,selectedBts,bts_list_latlng){
+    console.log(`coordz ${bts_list_latlng[selectedBts].lat}`)
     marker = L.marker([lat, lng], {
         icon: redIcon,
         name: selectedBts});
@@ -143,24 +144,26 @@ async function queryIvynet(lat,lng,selectedBts){
             }
             console.log(richiesta);
             // api request modificare settore
-            
+            if (richiesta){
+                var push_point = await fetch(`https://eolosector.zeromist.net/changesector?bts=${selectedBts}&bts_lat=${bts_list_latlng[selectedBts].lat}&bts_lng=${bts_list_latlng[selectedBts].lng}&lat=${lat}&lng=${lng}&tecno=${marker_tecnology.split(" ")[1]}`);
+                console.log(push_point.status)
+                if (push_point.status==200){
+                    console.log('ok');
+                    // Update sector
+                    // onClick(e);
+                }
+            }
         }
     }
 }
 async function getSectors(bts_name,bts_lat,bts_lng) {
-    var sectors = await fetch(`https://eolosector.zeromist.net/getsector/?bts=${bts_name}&bts_lat=${bts_lat}&bts_lng=${bts_lng}`,
-        {
-            mode: "cors", method: "GET", headers: {
-                "Content-Type": "application/json",
-            },
-        }
-    );
+    var sectors = await fetch(`https://eolosector.zeromist.net/getsector?bts=${bts_name}&bts_lat=${bts_lat}&bts_lng=${bts_lng}`);
     if (sectors.status !== 200) {
         return 0;
     }
     sekt = await sectors.json();
-    print(`sekt ${sekt}`);
-    return sekt;
+    console.log(`sekt ${JSON.stringify(sekt)}`);
+    return (sekt);
 }
 async function onClick(e) {
     selectedBts = this.options.name;
@@ -210,7 +213,7 @@ async function onClick(e) {
     //    'Z'], { animate: 3000, renderer: canvasRenderer }).addTo(map);
     sesso = await getSectors(this.options.name,e.latlng['lat'], e.latlng['lng']);
 
-    console.log(sesso);
+    console.log(`porcodio sesso ${sesso}`);
     tecnos_filtered = []
     if (sesso !== 0) {
         tecnos = getSectorCoverage(sesso);
@@ -317,71 +320,13 @@ async function onClick(e) {
 
 function getSectorCoverage(prova_sec) {
     var tecnos = []
-    for (let i = 0; i < 3; i++) {
-        try {
-            console.log(Object.keys(prova_sec[i][i]).length);
-        } catch (e) {
-            console.log(`error ${i}`);
-            continue
-        }
-
-        part_len = Object.keys(prova_sec[i][i]).length - 1;
-        for (let j = 0; j < part_len; j++) {
-            if (prova_sec[i][i][j][1] == 0) {
-                prova_sec[i][i][j][1] = prova_sec[i][i][j + 1][0];
-            }
-            //console.log(prova_sec[i][i][j]);
+    for (let i = 1; i < 4; i++) {
+        for (let k = 0; k<Object.keys(prova_sec['tecno'][i-1][i]).length;k++){
+            tecnos.push(`tecno ${i}: ${prova_sec['tecno'][i-1][i][k][0]} - ${prova_sec['tecno'][i-1][i][k][1]}`)
+            console.log(`tecno ${i}: ${prova_sec['tecno'][i-1][i][k][0]} - ${prova_sec['tecno'][i-1][i][k][1]}`)
         }
     }
-    for (let i = 0; i <= 3; i++) {
-        console.log(`tecno ${i}`);
-        s = 0
-        try {
-            console.log(Object.keys(prova_sec[i][i]).length);
-        } catch (e) {
-            console.log(`error ${i}`);
-            continue
-        }
-        console.log(`tecno length ${Object.keys(prova_sec[i][i]).length}`);
-        if (Object.keys(prova_sec[i][i]).length == 1) {
-            console.log(`tecno ${i}: ${prova_sec[i][i][0][0]} - ${prova_sec[i][i][0][1]}`);
-            tecnos.push(`tecno ${i}: ${Math.round((prova_sec[i][i][0][0] + Number.EPSILON) * 100) / 100} - ${Math.round((prova_sec[i][i][0][1] + Number.EPSILON) * 100) / 100}`);
-            continue
-        }
-
-        for (let j = 1; j < Object.keys(prova_sec[i][i]).length; j++) {
-            console.log(`piece ${j}`);
-            start = prova_sec[i][i][s][0];
-            if (j == Object.keys(prova_sec[i][i]).length - 1) {
-                console.log('last');
-                if (prova_sec[i][i][j][0] == prova_sec[i][i][j - 1][1]) {
-                    end = prova_sec[i][i][j][1];
-                    console.log(`tecno ${i}: ${start} - ${end}`);
-                    tecnos.push(`tecno ${i}: ${Math.round((start + Number.EPSILON) * 100) / 100} - ${Math.round((end + Number.EPSILON) * 100) / 100}`);
-
-                } else {
-                    end = prova_sec[i][i][j - 1][1];
-                    console.log(`tecno ${i}: ${start} - ${end}`);
-                    tecnos.push(`tecno ${i}: ${Math.round((start + Number.EPSILON) * 100) / 100} - ${Math.round((end + Number.EPSILON) * 100) / 100}`);
-
-                    start = prova_sec[i][i][j][0];
-                    end = prova_sec[i][i][j][1];
-                    console.log(`tecno ${i}: ${start} - ${end}`);
-                    tecnos.push(`tecno ${i}: ${Math.round((start + Number.EPSILON) * 100) / 100} - ${Math.round((end + Number.EPSILON) * 100) / 100}`);
-
-                }
-                break;
-            }
-            if (prova_sec[i][i][j][0] == prova_sec[i][i][j - 1][1]) {
-
-            } else {
-                end = prova_sec[i][i][j - 1][1];
-                console.log(`tecno ${i}: ${start} - ${end}`);
-
-                tecnos.push(`tecno ${i}: ${Math.round((start + Number.EPSILON) * 100) / 100} - ${Math.round((end + Number.EPSILON) * 100) / 100}`);
-                s = j;
-            }
-        }
-    }
+    console.log(tecnos);
+    
     return tecnos;
 }
