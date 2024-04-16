@@ -150,7 +150,7 @@ async function queryIvynet(lat,lng,selectedBts,bts_list_latlng){
                 if (push_point.status==200){
                     console.log('ok');
                     // Update sector
-                    // onClick(e);
+                    updateSectorsOnDiscrepancy({"latlng":{'lat':bts_list_latlng[selectedBts].lat,'lng':bts_list_latlng[selectedBts].lng}},selectedBts);
                 }
             }
         }
@@ -164,6 +164,121 @@ async function getSectors(bts_name,bts_lat,bts_lng) {
     sekt = await sectors.json();
     console.log(`sekt ${JSON.stringify(sekt)}`);
     return (sekt);
+}
+async function updateSectorsOnDiscrepancy(e, selectedBts){
+    map.eachLayer(function(layer){
+        if (layer['options']['removable']===true && layer['options']['map']===false){
+            map.removeLayer(layer);
+        }
+    });
+    sesso = await getSectors(selectedBts,e.latlng['lat'], e.latlng['lng']);
+
+    console.log(`porcodio sesso ${sesso}`);
+    tecnos_filtered = []
+    if (sesso !== 0) {
+        tecnos = getSectorCoverage(sesso);
+        for (let i = 0; i < Object.keys(tecnos).length; i++) {
+            if (!tecnos[i].includes("tecno 0")) {
+                tecnos_filtered.push(tecnos[i]);
+            }
+        }
+    } else {
+        tecnos_filtered = ":C"
+    }
+    tecno_colors ={
+        'tecno 1':'rgb(255,0,0)',
+        'tecno 2':'rgb(0,255,0)',
+        'tecno 3':'rgb(0,0,255)',
+    }
+    
+    real_sectors=[];
+    if (tecnos_filtered != ":C") {
+        for (let k = 0; k < tecnos_filtered.length; k++) {
+            this_sector = tecnos_filtered[k].split(':')[1].split('-');
+            if (this_sector[1]==0){
+                try{
+                    if (tecnos_filtered[k].split(':')[0] == tecnos_filtered[k+1].split(':')[0]){
+                        end_sector[1] = tecnos_filtered[k+1].split(':')[1].split('-');
+                    }else{
+                        end_sector[1]=360;
+                    }
+                }catch(e){
+                    end_sector[1]=360;
+                }
+                
+
+            }
+            else{
+                end_sector = tecnos_filtered[k].split(':')[1].split('-');
+            }
+            if (parseInt(this_sector[0]) <=5){
+                this_sector[0] = 0;
+            }
+            outer_sector = 10000;
+            real_sectors.push(`${tecnos_filtered[k].split(':')[0]};${parseInt(this_sector[0])};${parseInt(end_sector[1])}`);
+            switch (tecnos_filtered[k].split(':')[0]){
+                case 'tecno 1':
+                    outer_sector = 25000;
+                    break;
+                
+                case 'tecno 2':
+                    outer_sector = 8000;
+                    break;
+                case 'tecno 3':
+                    outer_sector = 23000;
+                    break;
+            }
+            console.log(`outer sect ${outer_sector}`);
+            if (tecnos_filtered[k].split(':')[0] == 'tecno 3'){
+                
+                L.sector({
+                    removable:true,
+                    map:false,
+                    center: [e.latlng['lat'], e.latlng['lng']],
+                    innerRadius: 8000,
+                    outerRadius: 25000,
+                    startBearing: parseInt(this_sector[0]),
+                    endBearing: parseInt(end_sector[1]),
+                    numberOfPoints: 100,
+                    color: tecno_colors['tecno 1']
+                }).addTo(map);
+                L.sector({
+                    removable:true,
+                    map:false,
+                    center: [e.latlng['lat'], e.latlng['lng']],
+                    innerRadius: 0,
+                    outerRadius: 8000,
+                    startBearing: parseInt(this_sector[0]),
+                    endBearing: parseInt(end_sector[1]),
+                    numberOfPoints: 100,
+                    color: tecno_colors['tecno 3']
+                }).addTo(map);
+            }else{
+                L.sector({
+                    removable:true,
+                    map:false,
+                    center: [e.latlng['lat'], e.latlng['lng']],
+                    innerRadius: 0,
+                    outerRadius: outer_sector,
+                    startBearing: parseInt(this_sector[0]),
+                    endBearing: parseInt(end_sector[1]),
+                    numberOfPoints: 100,
+                    color: tecno_colors[tecnos_filtered[k].split(':')[0]]
+                }).addTo(map);
+            }
+
+        }
+    }
+    console.log(real_sectors);
+    console.log(tecnos_filtered);
+    console.log(this.options.name);
+    document.getElementById('id').innerHTML = `<p>${this.options.id}</p>`;
+    document.getElementById('name').innerHTML = `<p>${this.options.name}</p>`;
+
+    document.getElementById('lat').innerHTML = `<p>${e.latlng['lat']}</p>`;
+    document.getElementById('lng').innerHTML = `<p>${e.latlng['lng']}</p>`;
+    document.getElementById('sec').innerHTML = `<p>${tecnos_filtered.join(" <br>")}</p>`;
+    document.getElementById('tecno').innerHTML = `<p>${this.options.tecno.replace("EOLO","").replace("EOLO","")}</p>`;
 }
 async function onClick(e) {
     selectedBts = this.options.name;
@@ -183,8 +298,9 @@ async function onClick(e) {
         })
         .then(function (arrayBuffer) {
             parseGeoraster(arrayBuffer).then(function (georaster) {
-                var scale = chroma.scale(["green", "yellow", "orange","orange","orange","orange", "red"]).domain([-20, 99]);
+                var scale = chroma.scale(["green", "orange", "red"]).domain([-20, 99]);
                 var layer = new GeoRasterLayer({
+                    map: true,
                     removable:true,
                     opacity: 0.5,
                     georaster: georaster,
@@ -273,6 +389,7 @@ async function onClick(e) {
                 
                 L.sector({
                     removable:true,
+                    map:false,
                     center: [e.latlng['lat'], e.latlng['lng']],
                     innerRadius: 8000,
                     outerRadius: 25000,
@@ -283,6 +400,7 @@ async function onClick(e) {
                 }).addTo(map);
                 L.sector({
                     removable:true,
+                    map:false,
                     center: [e.latlng['lat'], e.latlng['lng']],
                     innerRadius: 0,
                     outerRadius: 8000,
@@ -294,6 +412,7 @@ async function onClick(e) {
             }else{
                 L.sector({
                     removable:true,
+                    map:false,
                     center: [e.latlng['lat'], e.latlng['lng']],
                     innerRadius: 0,
                     outerRadius: outer_sector,
