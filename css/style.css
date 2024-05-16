@@ -11,7 +11,63 @@ h2 {
     color: #b9b9b9;
     font-family: Arial, Helvetica, sans-serif;
 }
+.texttitle{
+    font-size: 20;font-family: Arial, Helvetica, sans-serif
+    ;padding: 10;
+}
+.textinfo{
+    font-size: 14;font-family: Arial, Helvetica, sans-serif;
 
+padding: 10;
+padding-top: 0;
+}
+#popup-window::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box;  
+  }
+  
+  #popup-window::-webkit-scrollbar {
+    width: 16px;
+  }
+.close-button{
+    margin-top: 20;
+    height: 40px;
+    width: 570px;
+    border-radius: 15px;
+    right: 10px;
+    left:30;
+    display: block;
+}
+#popup-window {
+    overflow-y: scroll;
+    position: fixed;
+    width: 600px;
+    height: 700px;
+    background: rgba(230, 235, 250, 0.905);
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+  }  
+.info{
+    right:30;
+    display:flex;
+    position:fixed;
+    border-radius: 15px;
+    width: 30;
+    height: 30;
+    border:0px;
+    font-size: 18;
+    
+}
 .toprow { 
     padding-left: 24px;
     padding-top: 5px;
@@ -27,7 +83,7 @@ body {
 .rightmenu{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 19;
-    color: aliceblue;
+    color: black;
     z-index: 900;
     align-items: right;
     justify-content: center;
@@ -35,7 +91,7 @@ body {
     top: 100;
     width: 360px;
     height: 400px;
-    background: hwb(0 34% 66% / 0.705);
+    background: rgba(230, 235, 250, 0.905);
     display:flex;
     border-radius: 18px ;
     position:fixed;
@@ -45,19 +101,34 @@ body {
 .legenda{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 19;
-    color: aliceblue;
+    color: black;
     z-index: 900;
     align-items: right;
     justify-content: center;
     right:10;
     top: 520;
     width: 360px;
-    background: hwb(0 34% 66% / 0.705);
+    background: rgba(230, 235, 250, 0.905);
     display:flex;
     border-radius: 18px ;
     position:fixed;
     padding: 10px;
     align-items: right;
+}
+.topmenu{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19;
+    color: black;
+    z-index: 900;
+    align-items: center;
+    left:53;
+    right:10;
+    top: 10;
+    background: rgba(230, 235, 250, 0.905);
+    display:flex;
+    border-radius: 18px ;
+    position:fixed;
+    padding: 15px;
 }
 .menu {
     z-index: 900;
@@ -66,7 +137,7 @@ body {
     bottom: 5;
     width: 550px;
     height: 75px;
-    background: #57575794;
+    background: rgba(230, 235, 250, 0.905);
     display:block;
     border-radius: 19px ;
     position:fixed;
@@ -76,7 +147,7 @@ body {
 .main-row {
     width: 100%;  padding-top: 10px;   background: #2E2E2E; justify-content: center; display:flex;
 }
-#map { min-width: 80%; height: 900px;}
+#map { min-width: 80%; height: 1000px;}
 * {
     box-sizing: border-box;
 }
@@ -95,24 +166,27 @@ body {
   }
 .input {
     
-    height: 25;
+    height: 35;
     width: 290;
-      left: 0;
-      top: 0;
-      background: grey;
-      white-space: nowrap;
-      transform: translate(0, 0);
-      transform-origin: 0 0;
-      transition: transform 120ms ease-in;
-      font-weight: bold;
-      line-height: 1.2;
-      box-sizing: border-box;
-      display: block;
-      border: 3px solid currentColor;
-      color: currentColor;
-      border-radius: var(--size-radius);
+    left: 0;
+    top: 0;
+    background: rgb(248, 253, 255);
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.2;
+    box-sizing: border-box;
+    display: block;
+    border: 2px solid currentColor;
+    color: currentColor;
+    border-radius: 10px;
     }
-  
+.input::placeholder{
+    font-size:15 ;
+}
 .col1 {
     width:30%;
     float:left;
