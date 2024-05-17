@@ -128,47 +128,47 @@
         <p class="texttitle" style="font-size: 25;">Spieghino</p>
         <p class="texttitle" style="padding-top: 0;">Premessa</p>
         <p class="textinfo">Le informazioni messe a disposizione nel sito sono da considerarsi una simulazione di quelle
-            che sono le coperture reali, con le dovute approssimazioni, supposizioni ed errori temporali. È
+            che sono le coperture reali, con le dovute approssimazioni, supposizioni ed errori temporali. &#232;
             consigliato utilizzare il sito per delle verifiche di massima, per farsi un idea della situazione
-            orografica del territorio e per informazioni generali sulle BTS. È sempre consigliato fare 
+            orografica del territorio e per informazioni generali sulle BTS. &#200; sempre consigliato fare 
             riferimento ai dati ufficiali per chiarimenti.
         </p>
         <p class="texttitle">Come sono stati ottenuti i dati?</p>
-        <p class="textinfo">Se per le posizioni delle BTS e la tecnologia offerta è facile recuperare tutte le posizioni (diversi siti di copertura hanno
+        <p class="textinfo">Se per le posizioni delle BTS e la tecnologia offerta &#232; facile recuperare tutte le posizioni (diversi siti di copertura hanno
             API libere e questo dato viene offerto in chiaro), questo non si puo dire per i settori e per l'altezza delle antenne (dato fondamentale per calcolare l'area
             con visibilità e quindi coperta).<br>L'altezza delle BTS ha richiesta un lavoro immane di trigonometria e pazienza. Sapendo la posizione della BTS, si puo
-            ricavare l'altezza in base all'ombra proiettata a terra sulle foto satellitari. In questo caso é stato utilizzato Google Earth che rilascia anche il giorno preciso
-            nel quale la foto é stata scattata. Fare questo per quasi 4000 volte è parecchio dispendioso in termini di tempo quindi per circa metà delle BTS viene considerato il valore
+            ricavare l'altezza in base all'ombra proiettata a terra sulle foto satellitari. In questo caso &#232; stato utilizzato Google Earth che rilascia anche il giorno preciso
+            nel quale la foto &#232; stata scattata. Fare questo per quasi 4000 volte &#232; parecchio dispendioso in termini di tempo quindi per circa metà delle BTS viene considerato il valore
             "medio" di 30 metri da terra che risulta essere una discreta approssimazione.<br>Il <em>modello digitale di elevazione</em> utilizzato (DEM) rappresentante l'orografia italiana con una risoluzione di 10 metri 
-            è stato reperito dal portale INGV.<br> Ottenere la direzione dei settori non è stato certamente banale. Anche questi dati non vengono forniti in chiaro
-            da nessun servizio, per questo è stato necessario fare richieste ripetute in diverse posizioni per ogni BTS per ottenere una risoluzione angolare sufficiente.
+            &#232; stato reperito dal portale INGV.<br> Ottenere la direzione dei settori non &#232; stato certamente banale. Anche questi dati non vengono forniti in chiaro
+            da nessun servizio, per questo &#232; stato necessario fare richieste ripetute in diverse posizioni per ogni BTS per ottenere una risoluzione angolare sufficiente.
         </p>
         <p class="texttitle">Come sono stati elaborati i dati?</p>
-        <p class="textinfo">Ottenere i dati RAW é certamente fondamentale ma questi non possono essere rappresentati su mappa senza la dovuta analisi.
-            La maggior parte del tempo è stato investito nel calcolo delle <em>heatmap</em> in formato GeoTIFF tramite il plugin <em>qgis-visibility-analysis</em> di QGIS.
+        <p class="textinfo">Ottenere i dati RAW &#232; certamente fondamentale ma questi non possono essere rappresentati su mappa senza la dovuta analisi.
+            La maggior parte del tempo &#232; stato investito nel calcolo delle <em>heatmap</em> in formato GeoTIFF tramite il plugin <em>qgis-visibility-analysis</em> di QGIS.
             Le heatmap rappresentano la <em>depth below horizon</em>, ovvero un valore in metri che stima l'altezza alla quale dovremmo essere per vedere la BTS.
             Viene preso come riferimento il valore di 4 metri da terra (m slt) come altezza media di un'edificio e vengono considerati sia la rifrazione atmosferia, pari a 0.13, sia 
-            la curvatura terrestre. Il raggio entro il quale viene considerata la copertura é 15km, oltre questo valore le coperture sono rare ed esclusivamente con tecnologia <em>Eolowave</em> (30M).<br>
+            la curvatura terrestre. Il raggio entro il quale viene considerata la copertura &#232; 15km, oltre questo valore le coperture sono rare ed esclusivamente con tecnologia <em>Eolowave</em> (30M).<br>
             L'elaborazione dei settori consiste nel raggruppare le query effettuate ed interpolando i valori a seconda della loro distanza angolare: valori di tecnologia uguale
-            e con distanza angolare inferiore ai 15° vengono considerati come unico settore; settori con angolo iniziale inferiore a 5° o angolo finale superioe a 355° vengono approssimati
-            rispettivamente a 0° e 360°. 
+            e con distanza angolare inferiore ai 15&#176; vengono considerati come unico settore; settori con angolo iniziale inferiore a 5&#176; o angolo finale superioe a 355&#176; vengono approssimati
+            rispettivamente a 0&#176; e 360&#176;. 
         </p>
         <p class="texttitle">Approssimazioni, supposizioni e limiti di utilizzo</p>
         <p class="textinfo">Come già scritto, l'approssimazione piu importante e grossolana consiste nel considerare, per circa metà delle BTS, l'altezza media pari 30 metri,
-            per ora non sembrerebbe influenzare troppo le coperture stimate ed é importante sapere che l'eventuale errore influenza le coperture più distanti.
-            Una supposizione da tenere a mente quando si guarda la heatmap é l'altezza media del posizionamento della BTS valutato in 4 metri. Nel caso in cui la discrepanza
+            per ora non sembrerebbe influenzare troppo le coperture stimate ed &#232; importante sapere che l'eventuale errore influenza le coperture più distanti.
+            Una supposizione da tenere a mente quando si guarda la heatmap &#232; l'altezza media del posizionamento della BTS valutato in 4 metri. Nel caso in cui la discrepanza
             tra il valore stimato e quello effettivo di posizionamento della CPE sia apprezzabile, si considera di verificare il valore puntuale interrogando la heatmap.
-            I valori della heatmap hanno un intervallo <br>[ -4, 5000 ), ma possiamo considerare come intevallo di lavoro [ -4, 100 ]; sono necessari alcuni esempi per spiegare
+            I valori della heatmap hanno un intervallo <br>[ -4, 5000 ], ma possiamo considerare come intevallo di lavoro [ -4, 100 ]; sono necessari alcuni esempi per spiegare
             dei casi limite di utilizzo della heatmap:<br><br>
             1. Edificio alto 10 metri e valore heatmap -4: Nessun problema, il valore -4 indica che non solo abbiamo copertura a 4m slt ma la abbiamo anche a 0m slt, quindi a 10m slt non avremo alcun problema.<br>
             2. Edificio alto 10 metri e valore heatmap 2: Il valore 2 indica che dobbiamo sollevarci di 2m rispetto al valore considerato (4m slt) per ottenere copertura. Nell'esempio in considerazione, avremo copertura a 6m slt, quindi a 10m non ci saranno problemi.<br>
-            3. Edificio alto 4 metri e valore heatmap 0: Il valore 0 indica che il punto di inizio copertura é pari alla supposizione di 4m slt. In questo caso ci troviamo in una situazione limite ed altri fattori andrebbero considerati (approssimazione altezza BTS, presenza di edifici ed ostacoli, distanza).<br>
-            4. Edificio alto 10 metri e valore heatmap 50: In questo caso il valore di 50 ci indica che dobbiamo essere ad almeno 54m slt per avere visibilità. Trovandoci noi a 10m slt, una copertura è estremamente improbabile. <br><br>
-            Possiamo sintetizzare che la copertura può essere rappresentata dalla funzione<br><em> c = e - (4 + h)</em> dove <em> e</em> rappresenta l'altezza di installazione della CPE e <em> h</em> il valore puntuale sulla heatmap; più il risultato è positivo e più la visibilità è garantita.<br><br>
-            Un'altro fattore da considerare quando si valutano i dati è la presenza nella zona circostante di edifici/ostacoli che non sono tenuti in considerazione dal DEM INGV: prevalentemente strutture non naturali (palazzi, chiese, etc.) e boschi fitti.
+            3. Edificio alto 4 metri e valore heatmap 0: Il valore 0 indica che il punto di inizio copertura &#232; pari alla supposizione di 4m slt. In questo caso ci troviamo in una situazione limite ed altri fattori andrebbero considerati (approssimazione altezza BTS, presenza di edifici ed ostacoli, distanza).<br>
+            4. Edificio alto 10 metri e valore heatmap 50: In questo caso il valore di 50 ci indica che dobbiamo essere ad almeno 54m slt per avere visibilità. Trovandoci noi a 10m slt, una copertura &#232; estremamente improbabile. <br><br>
+            Possiamo sintetizzare che la copertura può essere rappresentata dalla funzione<br><em> c = e - (4 + h)</em> dove <em> e</em> rappresenta l'altezza di installazione della CPE e <em> h</em> il valore puntuale sulla heatmap; più il risultato &#232; positivo e più la visibilità &#232; garantita.<br><br>
+            Un'altro fattore da considerare quando si valutano i dati &#232; la presenza nella zona circostante di edifici/ostacoli che non sono tenuti in considerazione dal DEM INGV: prevalentemente strutture non naturali (palazzi, chiese, etc.) e boschi fitti.
         </p>
         <p class="texttitle">Modifiche</p>
-        <p class="textinfo">È possibile effettuare modifiche in autonomia per quanto riguarda l'estensione dei settori tramite CTRL + tasto sinistro dopo aver selezionato una BTS. Questa combinazione inizierà una query presso server esterni per la verifica puntuale della copertura.<br>
+        <p class="textinfo">&#200; possibile effettuare modifiche in autonomia per quanto riguarda l'estensione dei settori tramite CTRL + tasto sinistro dopo aver selezionato una BTS. Questa combinazione inizierà una query presso server esterni per la verifica puntuale della copertura.<br>
             In caso la copertura sia positiva e abbia una distanza angolare inferiore a 5° rispetto al settore più vicino con stessa tecnologia, il settore viene esteso fino al <em>bearing</em> in questione, arrotondato all'intero piu vicino.
 
         </p>
