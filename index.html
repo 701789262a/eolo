@@ -164,12 +164,12 @@
             2. Edificio alto 10 metri e valore heatmap 2: Il valore 2 indica che dobbiamo sollevarci di 2m rispetto al valore considerato (4m slt) per ottenere copertura. Nell'esempio in considerazione, avremo copertura a 6m slt, quindi a 10m non ci saranno problemi.<br>
             3. Edificio alto 4 metri e valore heatmap 0: Il valore 0 indica che il punto di inizio copertura &#232; pari alla supposizione di 4m slt. In questo caso ci troviamo in una situazione limite ed altri fattori andrebbero considerati (approssimazione altezza BTS, presenza di edifici ed ostacoli, distanza).<br>
             4. Edificio alto 10 metri e valore heatmap 50: In questo caso il valore di 50 ci indica che dobbiamo essere ad almeno 54m slt per avere visibilit&#224;. Trovandoci noi a 10m slt, una copertura &#232; estremamente improbabile. <br><br>
-            Possiamo sintetizzare che la copertura può essere rappresentata dalla funzione<br><em> c = e - (4 + h)</em> dove <em> e</em> rappresenta l'altezza di installazione della CPE e <em> h</em> il valore puntuale sulla heatmap; pi&#249; il risultato &#232; positivo e pi&#249; la visibilit&#224; &#232; garantita.<br><br>
+            Possiamo sintetizzare che la copertura pu&#242; essere rappresentata dalla funzione<br><em> c = e - (4 + h)</em> dove <em> e</em> rappresenta l'altezza di installazione della CPE e <em> h</em> il valore puntuale sulla heatmap; pi&#249; il risultato &#232; positivo e pi&#249; la visibilit&#224; &#232; garantita.<br><br>
             Un'altro fattore da considerare quando si valutano i dati &#232; la presenza nella zona circostante di edifici/ostacoli che non sono tenuti in considerazione dal DEM INGV: prevalentemente strutture non naturali (palazzi, chiese, etc.) e boschi fitti.
         </p>
         <p class="texttitle">Modifiche</p>
         <p class="textinfo">&#200; possibile effettuare modifiche in autonomia per quanto riguarda l'estensione dei settori tramite CTRL + tasto sinistro dopo aver selezionato una BTS. Questa combinazione inizier&#224; una query presso server esterni per la verifica puntuale della copertura.<br>
-            In caso la copertura sia positiva e abbia una distanza angolare inferiore a 5° rispetto al settore pi&#249; vicino con stessa tecnologia, il settore viene esteso fino al <em>bearing</em> in questione, arrotondato all'intero piu vicino.
+            In caso la copertura sia positiva e abbia una distanza angolare inferiore a 5&#176; rispetto al settore pi&#249; vicino con stessa tecnologia, il settore viene esteso fino al <em>bearing</em> in questione, arrotondato all'intero piu vicino.
 
         </p>
         <p class="texttitle">Crediti</p>
