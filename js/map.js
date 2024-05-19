@@ -321,7 +321,7 @@ async function onClick(e) {
         })
         .then(function (arrayBuffer) {
             parseGeoraster(arrayBuffer).then(function (georaster) {
-                var scale = chroma.scale(["green", "orange", "red"]).domain([-20, 99]);
+                var scale = chroma.scale(["green", "green", "green", "yellow", "red"]).domain([-7, 5]);
                 var layer = new GeoRasterLayer({
                     map: true,
                     removable:true,
@@ -334,7 +334,7 @@ async function onClick(e) {
                         //if (value == -4) return "rgb(0, 0, 0)";
                         if (value < -5) return "rgb(0, 0, 0)";
                         if (values[3] == 0) { return "rgba(0,0,0,0)" };
-                        if (value > 100) { return "rgba(0,0,0,0)" };
+                        if (value > 5) { return "rgba(0,0,0,0)" };
                         return scale(value).hex();
                     }
                 });
