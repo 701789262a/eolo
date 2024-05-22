@@ -14,6 +14,7 @@ headers = {
     'Cookie': 'frontend_lang=it_IT; session_id=f195ee4a8586d5b0ac4a7ec2886169701a285dff',
 }
 var selectedBts = "";
+//var georastervalues;
 var map = L.map('map').setView([40.96155, 8.872], 11);
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -87,6 +88,16 @@ const redIcon = new L.Icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
   });
+const verIcon = new L.Icon({
+    iconUrl:
+        "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
+    shadowUrl:
+        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
 
 async function queryIvynet(lat,lng,selectedBts,bts_list_latlng){
     console.log(`coordz ${bts_list_latlng[selectedBts].lat}`)
@@ -114,7 +125,27 @@ async function queryIvynet(lat,lng,selectedBts,bts_list_latlng){
     });
     click_tecno = await response.json();
     console.log(click_tecno);
-    document.getElementById('menu').innerHTML= `<p>${JSON.stringify(click_tecno)} @ lat ${lat} / lng ${lng}</p>`;
+
+    // change marker color
+
+    layergroup.clearLayers();
+    marker = L.marker([lat, lng], {
+        icon: verIcon,
+        name: selectedBts});
+    layergroup=L.layerGroup([marker])
+        .addTo(map);
+
+    // Get value GeoTIFF
+    var heatmap_value_url = `https://eolosector.zeromist.net/getheatmapvalue?bts=${selectedBts}&lat=${lat}&lng=${lng}`;
+    response = await fetch (heatmap_value_url,{
+        method:"GET"
+    });
+    heatmap_value = await response.json();
+    console.log(`heat ${heatmap_value['height']}`);
+
+    document.getElementById('menu').innerHTML= `<p>@ LAT ${Math.round(lat*1000000)/1000000} / LON ${Math.round(lng*1000000)/1000000} <br> 
+        &rArr; Copertura: ${JSON.stringify(click_tecno['tecno']).replace(/"/g, "")}<br>
+        &rArr; Heatmap: ${heatmap_value['height']}</p>`;
     marker_tecnology = `tecno ${click_tecno['tecno'].split("").filter((char)=> char === "M").length}`;
     sector_point=false
     present_sector= false
@@ -234,7 +265,7 @@ async function updateSectorsOnDiscrepancy(e, selectedBts){
             else{
                 end_sector = tecnos_filtered[k].split(':')[1].split('-');
             }
-            if (parseInt(this_sector[0]) <=5){
+            if (parseInt(this_sector[0]) <=5){var url_to_geotiff_file = `https://eolo.zeromist.net/images/${this.options.name}.tif`;
                 this_sector[0] = 0;
             }
             outer_sector = 10000;
@@ -317,10 +348,8 @@ async function onClick(e) {
 
     fetch(url_to_geotiff_file)
         .then(function (response) {
-            return response.arrayBuffer();
-        })
-        .then(function (arrayBuffer) {
-            parseGeoraster(arrayBuffer).then(function (georaster) {
+             response.arrayBuffer().then(function (arrayBuffer) {
+             parseGeoraster(arrayBuffer).then((georaster) => {
                 var scale = chroma.scale(["green", "green", "green", "yellow", "red"]).domain([-7, 5]);
                 var layer = new GeoRasterLayer({
                     map: true,
@@ -341,8 +370,8 @@ async function onClick(e) {
                 layer.addTo(map);
                 map.fitBounds(layer.getBounds());
 
-            })
-        });
+            });
+        });});
     var customPane = map.createPane("customPane");
     var canvasRenderer = L.canvas({ pane: customPane });
 

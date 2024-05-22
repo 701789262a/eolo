@@ -131,6 +131,7 @@ body {
     padding: 15px;
 }
 .menu {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
     z-index: 900;
     align-items: center;
     justify-content: center;
