@@ -27,8 +27,16 @@ map.on('click',function(e){
            console.log(e);
            await queryIvynet(e['latlng']['lat'],e['latlng']['lng'],selectedBts,bts_list_latlng);
         }
+        if (f.ctrlKey && !(selectedBts!="")) {
+            //alert("ctr key was pressed during the click");
+            console.log(e);
+            await generateReport(e['latlng']['lat'],e['latlng']['lng']);
+         }
     }
 });
+
+
+
 var LeafIcon = L.Icon.extend({
     options: {
        iconSize:     [38, 95],
@@ -98,6 +106,13 @@ const verIcon = new L.Icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
 });
+
+async function generateReport(lat, lng){
+    response = await fetch(`https://eoloapi.zeromist.net/getreport?lat=${lat}&lng=${lng}`, {
+         method: "GET"
+    });
+    report = await response.json();
+}
 
 async function queryIvynet(lat,lng,selectedBts,bts_list_latlng){
     console.log(`coordz ${bts_list_latlng[selectedBts].lat}`)
@@ -350,18 +365,23 @@ async function onClick(e) {
         .then(function (response) {
              response.arrayBuffer().then(function (arrayBuffer) {
              parseGeoraster(arrayBuffer).then((georaster) => {
+                georaster.options = { left: 0, top: 0, right: 4000, bottom: 4000, width: 10, height: 10 };
                 var scale = chroma.scale(["green", "green", "green", "yellow", "red"]).domain([-7, 5]);
                 var layer = new GeoRasterLayer({
                     map: true,
                     removable:true,
                     opacity: 0.5,
                     georaster: georaster,
-                    resolution: 512,
+                    resampleMethod: 'bilinear',
+                    //updateWhenZooming: false,
+                    options : { left: 0, top: 0, right: 0, bottom: 0, width: 0, height: 0 },
+                    resolution:32,
                     pixelValuesToColorFn: function (values) {
                         //console.log(values);
                         const value = values[0];
                         //if (value == -4) return "rgb(0, 0, 0)";
-                        if (value < -5) return "rgb(0, 0, 0)";
+                        
+                        //if (value < -5) return "rgba(0, 0, 0,0)";
                         if (values[3] == 0) { return "rgba(0,0,0,0)" };
                         if (value > 5) { return "rgba(0,0,0,0)" };
                         return scale(value).hex();
