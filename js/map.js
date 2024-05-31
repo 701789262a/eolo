@@ -230,7 +230,7 @@ async function queryIvynet(lat,lng,selectedBts,bts_list_latlng){
     heatmap_value = await response.json();
     console.log(`heat ${heatmap_value['height']}`);
 
-    document.getElementById('menu').innerHTML= `<p>@ LAT ${Math.round(lat*1000000)/1000000} / LON ${Math.round(lng*1000000)/1000000} <br> 
+    document.getElementById('menu').innerHTML= `<p style="margin-top: 0; padding: 0;">@ LAT ${Math.round(lat*1000000)/1000000} / LON ${Math.round(lng*1000000)/1000000} <br> 
         &rArr; Copertura: ${JSON.stringify(click_tecno['tecno']).replace(/"/g, "")}<br>
         &rArr; Heatmap: ${heatmap_value['height']}</p>`;
     marker_tecnology = `tecno ${click_tecno['tecno'].split("").filter((char)=> char === "M").length}`;

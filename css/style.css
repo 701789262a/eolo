@@ -190,6 +190,7 @@ body {
     bottom: 5;
     width: min(550px, 75%);
     height: 75px;
+    margin-top: 0;
     background: rgba(230, 235, 250, 0.905);
     display:block;
     border-radius: 19px ;
