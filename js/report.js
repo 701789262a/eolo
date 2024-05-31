@@ -28,7 +28,7 @@ function drawReport(data) {
         var text;
         switch(item){
             case "bearing":
-                text = `${Math.floor(data[item]*100)/100} &#176;`;
+                text = `${Math.floor(data[item]*100)/100}\u00B0`;
                 break;
             case "bts":
                 text = data[item];
@@ -47,7 +47,7 @@ function drawReport(data) {
                 }
                 break;  
             case "sector":
-                text = `${data[item].toString().replace(",","&#176; => ")}&#176;`;
+                text = `${data[item].toString().replace(",","\u00B0 => ")}\u00B0`;
                 if (/\d/.test(data[item])){
                     image_src = "pngs/good.png"
                 }else{
