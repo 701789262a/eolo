@@ -13,13 +13,37 @@ headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
     'Cookie': 'frontend_lang=it_IT; session_id=f195ee4a8586d5b0ac4a7ec2886169701a285dff',
 }
+window.onresize = function(event) {
+    var width = document.body.clientWidth;
+if (width<768){
+    for (var i=0; i<4; i++){
+        var topinfonumber = document.getElementsByClassName("topinfonumber")[i];
+        topinfonumber.style.color = "transparent";
+
+    }
+    
+}else{
+    for (var i=0; i<4; i++){
+        var topinfonumber = document.getElementsByClassName("topinfonumber")[i];
+        topinfonumber.style.color = "black";
+
+    }
+}
+};
+
 var selectedBts = "";
 //var georastervalues;
 var map = L.map('map').setView([40.96155, 8.872], 11);
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    zoomControl: false
+
 });
+map.zoomControl.remove();
+L.control.zoom({
+    position: 'bottomright'
+}).addTo(map);
 map.on('click',function(e){
     document.body.onclick = async function (f) {
         if (f.ctrlKey && selectedBts!="") {
@@ -108,10 +132,28 @@ const verIcon = new L.Icon({
 });
 
 async function generateReport(lat, lng){
+    var ul = document.getElementById("lista");
+    while (ul.firstChild) { 
+        ul.removeChild(ul.firstChild); 
+    }
+    var reportpopup = document.getElementsByClassName('report')[0];
+    reportpopup.style.display="block";
+    //window.open('getreport.html',"","width=700, height=500");
+    console.log("porcoddioreport");
+    
     response = await fetch(`https://eoloapi.zeromist.net/getreport?lat=${lat}&lng=${lng}`, {
          method: "GET"
     });
     report = await response.json();
+    var ul = document.getElementById("lista");
+    while (ul.firstChild) { 
+        ul.removeChild(ul.firstChild); 
+    }
+    for (var item in report){
+        console.log(`item ${item}`);
+        drawReport(item);
+    }
+    
 }
 
 async function queryIvynet(lat,lng,selectedBts,bts_list_latlng){

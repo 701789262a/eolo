@@ -17,22 +17,25 @@
         
         <div class="topmenu">
 
-            <p style="color: black; font-weight: bold;">Mappa copertura italiana FWA EOLO</h2>
-            <div style="padding-left: 100;"></div>
+            <p style="color: black; font-weight: bold;">Mappa copertura FWA EOLO</p>
+            <div style="padding-left: 2%;"></div>
             <input type="text" class="input" placeholder="Nome/ID BTS" id="input">
 
-            <div style="padding-left: 20%;"></div>
-            <p>Settori completi: </p>
-            <div style="padding-left: 4;"></div>
-            <p id="sectorcomplete"></p>
-            <div style="padding-left: 25;"></div>
-            <p>Heatmap complete: </p>
-            <div style="padding-left: 4;"></div>
-            <p id="heatmapcomplete"></p>
-            <div style="padding-left: 4%;"></div>
-            <button type="submit" class="info" >
-                <img src="pngs/information.png" alt="buttonpng" border="0" class="info" style="opacity: 0.7;"/>
-              </button>
+            <div style="padding-left: 5vw;" ></div>
+            <p class = "topinfonumber">Settori: </p>
+            <div style="padding-left: 4;" ></div>
+            <p id="sectorcomplete" class = "topinfonumber"></p>
+            <div style="padding-left: 25;" ></div>
+            <p class = "topinfonumber">Heatmap: </p>
+            <div style="padding-left: 4;" ></div>
+            <p id="heatmapcomplete" class = "topinfonumber"></p>
+            <div style="padding-left: 4%;" ></div>
+            <button type="submit" class="hideshow">
+                <img src="pngs/hideshow.png" alt="buttonpng" border="0" class="hideshow" style="opacity: 0.7;" />
+            </button>
+            <button type="submit" class="info">
+                <img src="pngs/information.png" alt="buttonpng" border="0" class="info" style="opacity: 0.7;" />
+            </button>
         </div>
         <div class="rightmenu" id="rightmenu">
 
@@ -87,7 +90,7 @@
                 </div>
                 <div class="row">
                     <div class="collegend">
-                        <img src="pngs/legend_red.png" alt="Italian Trulli">
+                        <img src="pngs/legend_red.png" alt="Italian Trulli" style="height:calc(10px + 0.3vw)">
                     </div>
                     <div class="collegend" id="lat"></div>
                     
@@ -95,7 +98,7 @@
                 </div>
                 <div >
                     <div class="collegend">
-                        <img src="pngs/legend_green.png" alt="Italian Trulli">
+                        <img src="pngs/legend_green.png" alt="Italian Trulli" style="height:calc(10px + 0.3vw)">
                     </div>
                     <div class="collegend" id="lat"></div>
                     
@@ -103,7 +106,7 @@
                 </div>
                 <div class="row">
                     <div class="collegend">
-                        <img src="pngs/legend_blue.png" alt="Italian Trulli">
+                        <img src="pngs/legend_blue.png" alt="Italian Trulli" style="height:calc(10px + 0.3vw)">
                     </div>
                     <div class="collegend" id="lat"></div>
                     
@@ -124,6 +127,17 @@
         </div>
     </div>
     <div id="map"></div>
+    <!--<iframe src="getreport.html" height="700" width="500" class="report"></iframe>-->
+    <div class="report">
+        <div>
+            <p style="font-family: Arial, Helvetica, sans-serif;display: inline-block;">Report</p>
+            <button id="closereport" style="left: 50;">X</button>
+        </div>
+        
+        <ul id ="lista">
+            
+        </ul>
+    </div>
     <div id="popup-window">
         <div >
         <p class="texttitle" style="font-size: 25;">Spieghino</p>
@@ -194,7 +208,8 @@
 <script src="./js/leaflet.sector.js"></script>
 <script src="https://unpkg.com/geoblaze"></script>
 <script src='https://unpkg.com/leaflet-arc/bin/leaflet-arc.min.js'></script>
-<script src="js/map.js?v=2341254541443344555437544543444444464214>"></script>
-<script src="js/script.js?v=4442354656453445634414234>"></script>
+<script src="js/map.js?v=23412545414433344555437544543444444464214>"></script>
+<script src="js/script.js?v=44423546563453445634414234>"></script>
+<script src="js/report.js?v=3"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/info.trigger.js"></script>
+<script src="js/info.trigger.js?v=4"></script>
