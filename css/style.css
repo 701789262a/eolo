@@ -177,7 +177,9 @@ body {
     right:10;
     top: 10;
     background: rgba(230, 235, 250, 0.905);
+    align-items: center;
     display:inline-flex;
+    position:fixed;
     border-radius: 18px ;
     position:fixed;
     padding: 15px;
