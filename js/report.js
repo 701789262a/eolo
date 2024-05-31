@@ -52,6 +52,7 @@ function drawReport(data) {
                     image_src = "pngs/good.png"
                 }else{
                     image_src = "pngs/nogood.png";
+                    text = "Null";
                 }
                 break;  
             case "tecno":
