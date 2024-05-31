@@ -59,6 +59,20 @@ map.zoomControl.remove();
 L.control.zoom({
     position: 'bottomright'
 }).addTo(map);
+map.on('contextmenu', async function(e){
+    console.log('porcoddio');
+            if (selectedBts!="") {
+               //alert("ctr key was pressed during the click");
+               console.log(e);
+               await queryIvynet(e['latlng']['lat'],e['latlng']['lng'],selectedBts,bts_list_latlng);
+            }
+            if (!(selectedBts!="")) {
+                //alert("ctr key was pressed during the click");
+                console.log(e);
+                await generateReport(e['latlng']['lat'],e['latlng']['lng']);
+             }
+        
+});
 map.on('click',function(e){
     document.body.onclick = async function (f) {
         if (f.ctrlKey && selectedBts!="") {
