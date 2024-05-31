@@ -28,7 +28,7 @@ function drawReport(data) {
         var text;
         switch(item){
             case "bearing":
-                text = `${Math.floor(data[item]*100)/100}&#176;`;
+                text = `${Math.floor(data[item]*100)/100} &#176;`;
                 break;
             case "bts":
                 text = data[item];
