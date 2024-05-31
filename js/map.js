@@ -13,6 +13,21 @@ headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
     'Cookie': 'frontend_lang=it_IT; session_id=f195ee4a8586d5b0ac4a7ec2886169701a285dff',
 }
+var width = document.body.clientWidth;
+if (width<768){
+    for (var i=0; i<4; i++){
+        var topinfonumber = document.getElementsByClassName("topinfonumber")[i];
+        topinfonumber.style.color = "transparent";
+
+    }
+    
+}else{
+    for (var i=0; i<4; i++){
+        var topinfonumber = document.getElementsByClassName("topinfonumber")[i];
+        topinfonumber.style.color = "black";
+
+    }
+}
 window.onresize = function(event) {
     var width = document.body.clientWidth;
 if (width<768){
@@ -149,10 +164,11 @@ async function generateReport(lat, lng){
     while (ul.firstChild) { 
         ul.removeChild(ul.firstChild); 
     }
-    for (var item in report){
+    report.forEach((item) => {
         console.log(`item ${item}`);
         drawReport(item);
-    }
+    })
+        
     
 }
 
