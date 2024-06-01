@@ -352,7 +352,8 @@ async function updateSectorsOnDiscrepancy(e, selectedBts){
             else{
                 end_sector = tecnos_filtered[k].split(':')[1].split('-');
             }
-            if (parseInt(this_sector[0]) <=5){var url_to_geotiff_file = `https://eolo.zeromist.net/images/${this.options.name}.tif`;
+            if (parseInt(this_sector[0]) <= 5){
+                //var url_to_geotiff_file = `https://eolo.zeromist.net/images/${this.options.name}.tif`;
                 this_sector[0] = 0;
             }
             outer_sector = 10000;

@@ -129,7 +129,18 @@ body {
 .listrightmenu{
     justify-content: right;
 }
+.rightmenu::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box;  
+}
+  
+.rightmenu::-webkit-scrollbar {
+    width: 16px;
+}
 .rightmenu{
+    overflow-y: scroll;
     font-family: Arial, Helvetica, sans-serif;
     font-size: calc(10px + 0.3vw);
     color: black;
