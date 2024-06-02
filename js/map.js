@@ -30,6 +30,13 @@ if (width<768){
 }
 window.onresize = function(event) {
     var width = document.body.clientWidth;
+    
+    const input = document.getElementById('input');
+    const blocco = document.getElementById('hint');
+    var viewportOffset = input.getBoundingClientRect();
+    blocco.style.left = viewportOffset.left;
+    var width = viewportOffset.right - viewportOffset.left;
+    blocco.style.width = width;
 if (width<768){
     for (var i=0; i<4; i++){
         var topinfonumber = document.getElementsByClassName("topinfonumber")[i];

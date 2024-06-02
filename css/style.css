@@ -129,6 +129,51 @@ body {
 .listrightmenu{
     justify-content: right;
 }
+#hint::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box;  
+}
+  
+#hint::-webkit-scrollbar {
+    width: 16px;
+}
+#hint{
+    overflow-y: scroll;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(10px + 0.3vw);
+    color: black;
+    z-index: 900;
+    align-items: right;
+    justify-content: left;
+    top: 90;
+    left: 50;
+    min-width: 200px;
+    height: 400px;
+    background: rgba(230, 235, 250, 0.905);
+    display:flex;
+    border-radius: 4px ;
+    position:fixed;
+    padding: 10px;
+    
+}
+#rowhint:hover{
+    background-color: #b6b6b6;
+}
+#rowhint{
+    text-align: left !important;
+
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 0;
+    width: 100%;
+    padding-bottom: 5;
+}
+#listahint{
+    align-items: left;
+    justify-content: left;
+}
 .rightmenu::-webkit-scrollbar-thumb {
     background-color: gray;
     border: 4px solid transparent;
