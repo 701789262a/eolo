@@ -149,8 +149,8 @@ body {
     justify-content: left;
     top: 90;
     left: 50;
-    min-width: 20px;
-    max-width: 200px;
+    min-height: 20px;
+    max-height: 400px;
     background: rgba(230, 235, 250, 0.905);
     display:flex;
     border-radius: 4px ;
