@@ -422,7 +422,7 @@ async function updateSectorsOnDiscrepancy(e, selectedBts){
     console.log(tecnos_filtered);
     console.log(this.options.name);
     document.getElementById('id').innerHTML = `<p>${this.options.id}</p>`;
-    document.getElementById('name').innerHTML = `<p>${this.options.name}</p>`;
+    document.getElementById('name').innerHTML = `<a href = "https://www.google.it/maps/@${e.latlng['lat']},${e.latlng['lng']},18.5z">porcodio${this.options.name}</a>`;
 
     document.getElementById('lat').innerHTML = `<p>${e.latlng['lat']}</p>`;
     document.getElementById('lng').innerHTML = `<p>${e.latlng['lng']}</p>`;
