@@ -56,9 +56,11 @@ if (width<768){
 var selectedBts = "";
 //var georastervalues;
 var map = L.map('map').setView([40.96155, 8.872], 11);
-var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+
+var osm = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    attribution: '&copy; <a href="http://www.arcgis.com/">Arcgis</a>',
     zoomControl: false
 
 });
@@ -421,9 +423,9 @@ async function updateSectorsOnDiscrepancy(e, selectedBts){
     console.log(real_sectors);
     console.log(tecnos_filtered);
     console.log(this.options.name);
+    
     document.getElementById('id').innerHTML = `<p>${this.options.id}</p>`;
-    document.getElementById('name').innerHTML = `<a href = "https://www.google.it/maps/@${e.latlng['lat']},${e.latlng['lng']},18.5z">porcodio${this.options.name}</a>`;
-
+    document.getElementById('name').innerHTML = `<p>${this.options.name}</p>`;
     document.getElementById('lat').innerHTML = `<p>${e.latlng['lat']}</p>`;
     document.getElementById('lng').innerHTML = `<p>${e.latlng['lng']}</p>`;
     document.getElementById('sec').innerHTML = `<p>${tecnos_filtered.join(" <br>")}</p>`;
@@ -446,7 +448,7 @@ async function onClick(e) {
              response.arrayBuffer().then(function (arrayBuffer) {
              parseGeoraster(arrayBuffer).then((georaster) => {
                 georaster.options = { left: 0, top: 0, right: 4000, bottom: 4000, width: 10, height: 10 };
-                var scale = chroma.scale(["green", "green", "green", "yellow", "red"]).domain([-7, 5]);
+                var scale = chroma.scale(["cyan", "cyan", "cyan", "yellow", "red"]).domain([-7, 5]);
                 var layer = new GeoRasterLayer({
                     map: true,
                     removable:true,
@@ -582,8 +584,7 @@ async function onClick(e) {
     console.log(tecnos_filtered);
     console.log(this.options.name);
     document.getElementById('id').innerHTML = `<p>${this.options.id}</p>`;
-    document.getElementById('name').innerHTML = `<p>${this.options.name}</p>`;
-
+    document.getElementById('name').innerHTML = `<a target="_blank" href="https://www.google.it/maps/@${e.latlng['lat']},${e.latlng['lng']},427m/data=!3m1!1e3?entry=ttu">${this.options.name}</p>`;
     document.getElementById('lat').innerHTML = `<p>${e.latlng['lat']}</p>`;
     document.getElementById('lng').innerHTML = `<p>${e.latlng['lng']}</p>`;
     document.getElementById('sec').innerHTML = `<p>${tecnos_filtered.join(" <br>")}</p>`;
