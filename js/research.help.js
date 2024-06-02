@@ -24,15 +24,27 @@ input.addEventListener("keyup", (event) => {
 });
 
 window.addEventListener('focusin', function (e) {
-    if (input != this.document.activeElement || this.document.activeElement != this.document.getElementById('rowhint') || this.document.activeElement != this.document.getElementById('listahint')) {
+    if (this.document.activeElement.id == 'rowhint'){
+        console.log(this.document.activeElement.textContent)
+        for(bts in bts_json){
+            if (bts_json[bts]['nome']==this.document.activeElement.textContent){
+                map.flyTo([bts_json[bts]['lat'], bts_json[bts]['lng']], 15);
+                break;
+            }
+        }
+        
+    }
+    if (input != this.document.activeElement ) {
         console.log('defocus 1');
         document.getElementById("hint").remove();
     } else {
+        
         if (input.value != "") {
             console.log(`focus and show hint 2${input.value}`);
             loadHint(input.value);
         }
     }
+
 });
 
 
@@ -85,7 +97,11 @@ async function loadHint(partiallyFilledBts) {
             row = document.createElement('button');
             row.id = "rowhint"
             rowText = document.createTextNode(bts_json[bts]['nome'])
+            
             row.appendChild(rowText)
+            row.addEventListener('click',e => {
+                console.log(`click ${e.target.innerText}`)
+            })
             
             li = document.createElement('li');
 
