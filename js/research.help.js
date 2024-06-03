@@ -104,7 +104,7 @@ async function loadHint(partiallyFilledBts) {
             })
             
             li = document.createElement('li');
-
+            li.style ="list-style-type: none;  margin: 0;padding: 0;"
             li.appendChild(row)
             //li.append(sep)
             ul.appendChild(li)
