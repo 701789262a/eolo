@@ -448,7 +448,7 @@ async function onClick(e) {
              response.arrayBuffer().then(function (arrayBuffer) {
              parseGeoraster(arrayBuffer).then((georaster) => {
                 georaster.options = { left: 0, top: 0, right: 4000, bottom: 4000, width: 10, height: 10 };
-                var scale = chroma.scale(["cyan", "cyan", "cyan", "yellow", "red"]).domain([-7, 5]);
+                var scale = chroma.scale(["cyan", "#2afeb7", "green", "yellow", "red"]).domain([-4, 5]);
                 var layer = new GeoRasterLayer({
                     map: true,
                     removable:true,
