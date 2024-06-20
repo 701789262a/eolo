@@ -422,10 +422,10 @@ async function updateSectorsOnDiscrepancy(e, selectedBts){
     }
     console.log(real_sectors);
     console.log(tecnos_filtered);
-    console.log(this.options.name);
+    console.log(selectedBts);
     
     document.getElementById('id').innerHTML = `<p>${this.options.id}</p>`;
-    document.getElementById('name').innerHTML = `<p>${this.options.name}</p>`;
+    document.getElementById('name').innerHTML = `<p>${selectedBtsname}</p>`;
     document.getElementById('lat').innerHTML = `<p>${e.latlng['lat']}</p>`;
     document.getElementById('lng').innerHTML = `<p>${e.latlng['lng']}</p>`;
     document.getElementById('sec').innerHTML = `<p>${tecnos_filtered.join(" <br>")}</p>`;
