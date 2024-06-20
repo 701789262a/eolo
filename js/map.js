@@ -272,6 +272,7 @@ async function queryIvynet(lat,lng,selectedBts,bts_list_latlng){
             console.log(richiesta);
             // api request modificare settore
             if (richiesta){
+                richiesta = false;
                 var push_point = await fetch(`https://eolosector.zeromist.net/changesector?bts=${selectedBts}&bts_lat=${bts_list_latlng[selectedBts].lat}&bts_lng=${bts_list_latlng[selectedBts].lng}&lat=${lat}&lng=${lng}&tecno=${marker_tecnology.split(" ")[1]}`);
                 console.log(push_point.status)
                 if (push_point.status==200){
@@ -423,13 +424,12 @@ async function updateSectorsOnDiscrepancy(e, selectedBts){
     console.log(real_sectors);
     console.log(tecnos_filtered);
     console.log(selectedBts);
-    
-    document.getElementById('id').innerHTML = `<p>${this.options.id}</p>`;
-    document.getElementById('name').innerHTML = `<p>${selectedBtsname}</p>`;
+    console.log(e);
+    console.log(e.options);
+    document.getElementById('name').innerHTML = `<p>${selectedBts}</p>`;
     document.getElementById('lat').innerHTML = `<p>${e.latlng['lat']}</p>`;
     document.getElementById('lng').innerHTML = `<p>${e.latlng['lng']}</p>`;
     document.getElementById('sec').innerHTML = `<p>${tecnos_filtered.join(" <br>")}</p>`;
-    document.getElementById('tecno').innerHTML = `<p>${this.options.tecno.replace("EOLO","").replace("EOLO","")}</p>`;
 }
 async function onClick(e) {
     selectedBts = this.options.name;
