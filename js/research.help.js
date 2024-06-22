@@ -5,6 +5,17 @@ var btsClicked = document.getElementById('rowhint');
 
 input.addEventListener("keyup", (event) => {
     try {
+        if(event.code.toString() == "Enter" && input.value != ""){
+            console.log("porcoddio")
+            var target = document.getElementById('rowhint').textContent
+            console.log(`maah ${target}`)
+            for(bts in bts_json){
+                if (bts_json[bts]['nome']==target){
+                    map.flyTo([bts_json[bts]['lat'], bts_json[bts]['lng']], 15);
+                    break;
+                }
+            }
+        }
         if (input == document.activeElement) {
             console.log(`focus and show hint 1 ${event.val} ${input.value}`);
             //blocco.style.zIndex="900";
@@ -17,6 +28,7 @@ input.addEventListener("keyup", (event) => {
             console.log('defocus 2');
             document.getElementById("hint").remove();
         }
+        
     }
     catch (e) {
 
