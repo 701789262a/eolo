@@ -221,10 +221,18 @@ async function queryIvynet(lat, lng, selectedBts, bts_list_latlng) {
     response = await fetch(`https://eoloapi.zeromist.net/getinventory?lat=${lat}&lng=${lng}&bts=${selectedBts}`, {
         method: "GET"
     });
+
+    altimetricplan = await fetch(`https://eolosector.zeromist.net/getaltimetricplan?latbts=${bts_list_latlng[selectedBts].lat}&lngbts=${bts_list_latlng[selectedBts].lng}&latpoint=${lat}&lngpoint=${lng}`, {
+        method: "GET"
+    });
     click_tecno = await response.json();
+    altimetricplanresponse = JSON.parse((await altimetricplan.json()).replace("'",'"').replace("'",'"').replace("'",'"').replace("'",'"'));
+
     console.log(click_tecno);
-    xValuesChart = click_tecno['altimetric']['x']
-    yValuesChart = click_tecno['altimetric']['y']
+    console.log(altimetricplanresponse)
+    console.log(altimetricplan['x'])
+    xValuesChart = altimetricplanresponse['x']
+    yValuesChart = altimetricplanresponse['y']
 
     // change marker color
 
