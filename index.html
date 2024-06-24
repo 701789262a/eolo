@@ -120,16 +120,20 @@
 
     </div>
 
-    <div style="  align-items: start;justify-content: center;  display: flex; align-items: start;display:inline-flex;">
+    <div style="  justify-content: center;  display:inline-flex;">
 
         <div class="menu" id="menu" style="position:fixed;position:fixed;">
-            <p style="margin-top: 0; padding: 0;font-size: 12;"></p>
+            <canvas id="myChart" style="width:100%;max-width:700px;height: 150;visibility:hidden;border-radius: 50;border-color: aquamarine;"></canvas>
+            <div  id="innermenu" style="position:fixed;position:fixed;">
+                <p style="margin-top: 0; padding: 0;font-size: 12;"></p>
+            </div>
         </div>
     </div>
     <div id="map"></div>
     <!--<iframe src="getreport.html" height="700" width="500" class="report"></iframe>-->
     <div class="report">
         <div>
+            
             <p style="font-family: Arial, Helvetica, sans-serif;display: inline-block;">Report</p>
             <button id="closereport" style="left: 50;">X</button>
         </div>
@@ -209,9 +213,12 @@
 <script src="./js/leaflet.sector.js"></script>
 <script src="https://unpkg.com/geoblaze"></script>
 <script src='https://unpkg.com/leaflet-arc/bin/leaflet-arc.min.js'></script>
-<script src="js/map.js?v=23412545445415545443335444555454375445453444444464214>"></script>
+<script src="js/map.js?v=234125454454155445443335444555454375445453444444464214>"></script>
 <script src="js/script.js?v=44424535554655556534553445634414234>"></script>
 <script src="js/report.js?v=35555"></script>
 <script src="js/research.help.js?v=554"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/info.trigger.js?v=4"></script>
+<script src="js/info.trigger.js?v=44"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/altimetric.plan.js?v=4"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
