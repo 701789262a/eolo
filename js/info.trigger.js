@@ -7,19 +7,16 @@ var reportclose = document.getElementById("closereport");
 var menu = document.getElementById("menu");
 const defaultMenuHeight= "75"
 const expandedMenuHeight= "225"
-const graphHeight =" 150"
+const graphHeight ="150"
 menu.addEventListener('click', function() {
     // specify the action to take when the div is clicked
     console.log(menu.style.height)
     if(menu.style.height=="75px" || menu.style.height=="" ){
-        document.getElementById("myChart").style.height=graphHeight;
-        document.getElementById("myChart").style.maxHeight=graphHeight;
-        document.getElementById("myChart").style.visibility="visible";
+        document.getElementById("myChart").style.display="block";
         menu.style.height=expandedMenuHeight;
     }else{
         menu.style.height=defaultMenuHeight;
-        document.getElementById("myChart").style.maxHeight="0px";
-        document.getElementById("myChart").style.visibility="hidden";
+        document.getElementById("myChart").style.display="none";
 
     }
     
