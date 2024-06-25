@@ -19,6 +19,12 @@ function generateChart(xValues, yValues) {
                 intersect: false,
             },
             plugins: {
+                decimation:{
+                    enabled: true,
+                    algorithm: 'lttb',
+                    samples:100,
+                    threshold:100
+                },
                 filler: {
                     propagate: false,
                 },
