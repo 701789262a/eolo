@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" href="css/adminstyle.css?v=55">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="module" src="js/admin.js"></script>
+    <script type="module" src="js/admin.js?v=55"></script>
 </head>
+
 <body>
     <h1>Beh</h1>
-    <p>email :<span id="email"></span></p>
+    <p>email: <span id="email"></span></p>
+    <div class="parent" >
+        <div class="div11">
+            <p>Nome</p>
+        </div>
+        <div class="div1">
+            <p>Id</p>
+        </div>
+        <div class="div2">
+            <p>Lat</p>
+        </div>
+        <div class="div3">
+            <p>Lng</p>
+        </div>
+        <div class="div4">
+            <p>Stato</p>
+        </div>
+        <div class="div5">
+            <p>Data Attivazione</p>
+        </div>
+        <div class="div13">
+            <p>Tecnologia</p>
+        </div>
+        <div class="div6"> <input type="text" id="id"> </div>
+        <div class="div7"> <input type="text" id="lat"> </div>
+        <div class="div8"> <input type="text" id="lng"> </div>
+        <div class="div9"> <form action="#">
+            <select name="stato" id="statoselector">
+              <option value="attiva">Attivata</option>
+              <option value="disattiva">Disattivata</option>
+              <option value="nonattiva">Non ancora attiva</option>
+             >
+            </select>
+      </form> </div>
+        <div class="div10"> <input type="text" id="data"> </div>
+        <div class="div12"> <input type="text" id="nome"> </div>
+        <div class="div14"> 
+            <form action="#">
+                <select name="tecno" id="tecnoselector">
+                  <option value="wave">eolowave</option>
+                  <option value="waveg">eolowaveG</option>
+                  <option value="wavewaveg">eolowave + G</option>
+                 >
+                </select>
+          </form> </div>
+
+        <button id="importmanual">Importa</button>
+    </div>
+
+
+
+
+
+
 </body>
+
 </html>

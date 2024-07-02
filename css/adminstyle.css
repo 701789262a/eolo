@@ -1,0 +1,137 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px; /* Creates space between grid items */
+    padding: 20px; /* Creates space around the grid */
+    background-color: #f5f5f5; /* Light background for the grid container */
+    width: 80%; /* Width of the container */
+    max-width: 100%; /* Ensures it doesn't overflow the viewport */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1200px) {
+    .parent {
+        grid-template-columns: repeat(4, 1fr); /* Adjust columns for medium screens */
+        margin-left: 5%; /* Reduce left margin */
+        width: 95%; /* Adjust width accordingly */
+    }
+}
+
+@media (max-width: 800px) {
+    .parent {
+        grid-template-columns: repeat(2, 1fr); /* Adjust columns for small screens */
+        margin-left: 5%; /* Further reduce left margin */
+        width: 95%; /* Adjust width accordingly */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .parent > div {
+        font-size: 1em; /* Adjust font size for small screens */
+    }
+
+    input, button, select {
+        padding: 6px 10px; /* Adjust padding for small screens */
+        font-size: 0.8em; /* Adjust font size for small screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .parent {
+        grid-template-columns: 1fr; /* Single column layout for very small screens */
+        margin-left: 0; /* Remove left margin */
+        width: 100%; /* Full width */
+        padding: 5px; /* Further reduce padding */
+    }
+
+    .parent > div {
+        font-size: 0.9em; /* Further adjust font size */
+    }
+
+    input, button, select {
+        padding: 4px 8px; /* Further adjust padding */
+        font-size: 0.7em; /* Further adjust font size */
+    }
+}
+
+.parent > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4caf50; /* Green background for grid items */
+    color: white;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+input, button, select {
+    padding: 6px 10px; /* Reduced padding */
+    margin: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 0.8em; /* Reduced font size */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+input:focus, button:focus {
+    border-color: #4caf50; /* Green border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green glow on focus */
+}
+
+button {
+    background-color: #4caf50; /* Green background for buttons */
+    color: white; /* White text for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.div1 { grid-area: 1 / 2 / 2 / 3; }
+.div2 { grid-area: 1 / 3 / 2 / 4; }
+.div3 { grid-area: 1 / 4 / 2 / 5; }
+.div4 { grid-area: 1 / 5 / 2 / 6; }
+.div5 { grid-area: 1 / 6 / 2 / 7; }
+.div6 { grid-area: 2 / 2 / 3 / 3; }
+.div7 { grid-area: 2 / 3 / 3 / 4; }
+.div8 { grid-area: 2 / 4 / 3 / 5; }
+.div9 { grid-area: 2 / 5 / 3 / 6; }
+.div10 { grid-area: 2 / 6 / 3 / 7; }
+.div11 { grid-area: 1 / 1 / 2 / 2; }
+.div12 { grid-area: 2 / 1 / 3 / 2; }
+.div13 { grid-area: 1 / 7 / 2 / 8; }
+.div14 { grid-area: 2 / 7 / 3 / 8; }
+
+/* Specific style for the Lat input field to make it smaller horizontally */
+.div1 input {
+    width: 100px; /* Set a specific width */
+}
+.div2 input {
+    width: 100px; /* Set a specific width */
+}
+.div3 input {
+    width: 100px; /* Set a specific width */
+}
+.div4 input {
+    width: 100px; /* Set a specific width */
+}
+.div5 input {
+    width: 100px; /* Set a specific width */
+}
