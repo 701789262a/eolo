@@ -34,7 +34,7 @@ loginpush.addEventListener('click', (event) => {
         console.log('login ok')
         const user = userCredential.user;
         localStorage.setItem('loggedInUserId', user.uid)
-
+        window.location.href=("https://eolo.zeromist.net/admin.html")
     }).catch((error)=>{
         console.log(error)
         const errorCode = error.code;
