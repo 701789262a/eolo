@@ -63,6 +63,25 @@ padding-top: 0;
     z-index: 1000;
     display: none;
   }  
+
+.logintab {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: fixed;
+    max-width: 90%;
+    width: 400;
+    height: 300;
+    background: rgba(230, 235, 250, 0.905);
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+  }
 .report {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     overflow-y: scroll;
@@ -93,7 +112,7 @@ padding-top: 0;
     width: 16px;
 } 
 .info{
-    
+    cursor: pointer;
     right:30;
     display:flex;
     position:fixed;
@@ -104,7 +123,22 @@ padding-top: 0;
     font-size: 18;
     
 }
+.login{
+    cursor: pointer;
+    right:100;
+    display:flex;
+    position:fixed;
+    border-radius: 15px;
+    background-color: white;
+
+    width: 30;
+    height: 30;
+    border:0px;
+    font-size: 18;
+    
+}
 .hideshow{
+    cursor: pointer;
     right:65;
     display:flex;
     position:fixed;

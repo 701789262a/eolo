@@ -1,4 +1,7 @@
 var openbutton = document.getElementsByClassName("info")[0];
+var loginbutton = document.getElementsByClassName("login")[0];
+var logintab = document.getElementsByClassName("logintab")[0];
+
 var hideshow = document.getElementsByClassName("hideshow")[0];
 var closebutton = document.getElementsByClassName("close-button")[0];
 var popup = document.getElementById("popup-window");
@@ -28,6 +31,16 @@ reportclose.onclick = function (e) {
 openbutton.onclick = function (e) {
     console.log("porcoddio");
     popup.style.display = "block";
+}
+loginbutton.onclick = function (e) {
+    console.log("porcoddio");
+    const loggedInUserId = localStorage.getItem('loggedInUserId');
+    if (loggedInUserId){
+        window.location.replace('https://eolo.zeromist.net/admin.html')
+    }else{
+        logintab.style.display = "block";
+    }
+    
 }
 closebutton.onclick = function (e) {
     popup.style.display = "none";

@@ -384,14 +384,14 @@ async function updateSectorsOnDiscrepancy(e, selectedBts) {
             real_sectors.push(`${tecnos_filtered[k].split(':')[0]};${parseInt(this_sector[0])};${parseInt(end_sector[1])}`);
             switch (tecnos_filtered[k].split(':')[0]) {
                 case 'tecno 1':
-                    outer_sector = 25000;
+                    outer_sector = 21000;
                     break;
 
                 case 'tecno 2':
                     outer_sector = 8000;
                     break;
                 case 'tecno 3':
-                    outer_sector = 23000;
+                    outer_sector = 21000;
                     break;
             }
             console.log(`outer sect ${outer_sector}`);
@@ -402,7 +402,7 @@ async function updateSectorsOnDiscrepancy(e, selectedBts) {
                     map: false,
                     center: [e.latlng['lat'], e.latlng['lng']],
                     innerRadius: 8000,
-                    outerRadius: 25000,
+                    outerRadius: 21000,
                     startBearing: parseInt(this_sector[0]),
                     endBearing: parseInt(end_sector[1]),
                     numberOfPoints: 100,
@@ -544,14 +544,14 @@ async function onClick(e) {
             real_sectors.push(`${tecnos_filtered[k].split(':')[0]};${parseInt(this_sector[0])};${parseInt(end_sector[1])}`);
             switch (tecnos_filtered[k].split(':')[0]) {
                 case 'tecno 1':
-                    outer_sector = 25000;
+                    outer_sector = 21000;
                     break;
 
                 case 'tecno 2':
                     outer_sector = 8000;
                     break;
                 case 'tecno 3':
-                    outer_sector = 23000;
+                    outer_sector = 21000;
                     break;
             }
             console.log(`outer sect ${outer_sector}`);
@@ -562,7 +562,7 @@ async function onClick(e) {
                     map: false,
                     center: [e.latlng['lat'], e.latlng['lng']],
                     innerRadius: 8000,
-                    outerRadius: 25000,
+                    outerRadius: 21000,
                     startBearing: parseInt(this_sector[0]),
                     endBearing: parseInt(end_sector[1]),
                     numberOfPoints: 100,
