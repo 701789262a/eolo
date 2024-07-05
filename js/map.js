@@ -128,7 +128,7 @@ async function writeBts() {
     var markers = L.markerClusterGroup({
         layer_base: true,
         maxClusterRadius: 100,
-        spiderfyOnMaxZoom: false, showCoverageOnHover: true, zoomToBoundsOnClick: true, chunkedLoading: true
+        spiderfyOnMaxZoom: true, showCoverageOnHover: true, zoomToBoundsOnClick: true, chunkedLoading: true
     }
     );
     bts_list_latlng = new Object()
