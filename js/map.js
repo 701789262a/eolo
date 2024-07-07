@@ -58,7 +58,7 @@ var selectedBts = "";
 var map = L.map('map').setView([40.96155, 8.872], 11);
 
 
-var osm = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png', {
+var osm = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.arcgis.com/">Arcgis</a>',
     zoomControl: false

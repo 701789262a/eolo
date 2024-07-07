@@ -267,7 +267,7 @@
 
             if (dataToPush.length > 0) {
                 try {
-                    const response = await fetch('https://your-api-endpoint/push', {
+                    const response = await fetch('https://adminapi.zeromist.net/addbtsbackend', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(dataToPush)
