@@ -440,7 +440,7 @@ async function updateSectorsOnDiscrepancy(e, selectedBts) {
     console.log(selectedBts);
     console.log(e);
     console.log(e.options);
-    document.getElementById('name').innerHTML = `<p>${selectedBts}</p>`;
+    document.getElementById('name').innerHTML = `<a target="_blank" href="https://www.google.it/maps/@${e.latlng['lat']},${e.latlng['lng']},427m/data=!3m1!1e3?entry=ttu">${this.options.name}</p>`;
     document.getElementById('lat').innerHTML = `<p>${e.latlng['lat']}</p>`;
     document.getElementById('lng').innerHTML = `<p>${e.latlng['lng']}</p>`;
     document.getElementById('sec').innerHTML = `<p>${tecnos_filtered.join(" <br>")}</p>`;
