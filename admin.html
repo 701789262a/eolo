@@ -91,7 +91,8 @@
             cursor: pointer;
             border-radius: 4px;
         }
-        #pushWaitingButton{
+
+        #pushWaitingButton {
             background-color: red;
             color: white;
             border: none;
@@ -104,6 +105,7 @@
             cursor: pointer;
             border-radius: 4px;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -153,13 +155,15 @@
             cursor: pointer;
             border-radius: 4px;
         }
+
         .sortable {
-        display: flex;
-        align-items: center;
-    }
-    .sortable span {
-        margin-left: 5px;
-    }
+            display: flex;
+            align-items: center;
+        }
+
+        .sortable span {
+            margin-left: 5px;
+        }
     </style>
 </head>
 
@@ -199,9 +203,9 @@
 
                 <label for="tecnoselector">Technology:</label>
                 <select id="tecnoselector" name="technology" required>
-                    <option value="eolowave">Eolowave</option>
-                    <option value="eolowaveG">EolowaveG</option>
-                    <option value="eolowave + G">Eolowave + G</option>
+                    <option value="EOLOwave">Eolowave</option>
+                    <option value="EOLOwaveG">EolowaveG</option>
+                    <option value="EOLOwave + EOLOwaveG">Eolowave + G</option>
                 </select>
 
                 <button type="button" id="importmanual">Submit</button>
@@ -233,6 +237,7 @@
                         <th>State</th>
                         <th>Date</th>
                         <th>Technology</th>
+                        <th>Is Manual</th>
                         <th>Status</th>
                         <th>Percentage</th>
                         <th>Actions</th>
@@ -273,8 +278,8 @@
             const dataToPush = [];
 
             rows.forEach(row => {
-                const pushStatus = row.children[8].textContent;
-                if (pushStatus === 'waiting' || pushStatus.slice(-1)=="*"  && pushStatus != "complete*" && pushStatus != "sent*") {
+                const pushStatus = row.children[9].textContent;
+                if (pushStatus === 'waiting' || pushStatus.slice(-1) == "*" && pushStatus != "complete*" && pushStatus != "sent*") {
                     const rowData = {};
                     row.querySelectorAll('td').forEach((td, index) => {
                         const key = document.querySelectorAll('#data-table th')[index].textContent.toLowerCase();
@@ -327,17 +332,17 @@
             const nome = document.getElementById('nome').value;
             const tecno = document.getElementById('tecnoselector').value;
 
-            apiImportBts(id, lat, lng, stato, data, nome, tecno);
+            apiImportBts(id, lat, lng, stato, data, nome, tecno, true);
         };
 
-        async function apiImportBts(id, lat, lng, stato, data, nome, tecno) {
+        async function apiImportBts(id, lat, lng, stato, data, nome, tecno,isManual = false) {
             // var response = await fetch(`https://eolosector.zeromist.net/importbts?nome=${nome}&id=${id}&lat=${lat}&lng=${lng}&stato=${stato}&data=${data}&tecno=${tecno}`, {
             //     method: 'GET'
             // });
             // var res = await response.json();
             // console.log(res);
             console.log(stato)
-            insertDataIntoTable([{ '1diff': '+', 'name': nome, 'id': id, 'lat': lat, 'lng': lng, 'state': stateTranslator[stato], 'date': data, 'technology': tecno }], true)
+            insertDataIntoTable([{ '1diff': '+', 'name': nome, 'id': id, 'lat': lat, 'lng': lng, 'state': stateTranslator[stato], 'date': data, 'technology': tecno ,'isManual':isManual}], true)
         }
 
         // JavaScript to handle file upload and parse
@@ -384,29 +389,25 @@
             const uploadedIds = new Set();
 
             var differences = [];
+            console.log(serverIds)
+            
 
-            if (fileType === 'csv') {
-                uploadedData.forEach(uploadedRow => {
-                    uploadedIds.add(Number(uploadedRow['ID']));
-                    if (!serverIds.has(Number(uploadedRow['ID']))) {
-                        differences.push({ '1diff': '+', 'title': uploadedRow['title'], 'id': uploadedRow['ID'], 'lat': uploadedRow['lat'], 'lon': uploadedRow['lon'], 'stato': stateTranslator[uploadedRow['stato']], 'z1': '', 'z2': '' });
-                    }
-
-                });
-                differences.pop()
-            } else if (fileType === 'json') {
-                uploadedData.forEach(uploadedRow => {
-                    uploadedIds.add(uploadedRow.id);
-                    if (!serverIds.has(uploadedRow.id)) {
-                        differences.push({ '1diff': '+', 'title': uploadedRow.nome, 'id': uploadedRow.id, 'lat': uploadedRow.lat, 'lon': uploadedRow.lng, 'stato': stateTranslator[Number(uploadedRow.attiva)], 'date': uploadedRow.data_attivazione, 'technology': uploadedRow.tech_string });
-                    }
-                });
-            }
+            uploadedData.forEach(uploadedRow => {
+                uploadedIds.add(uploadedRow.id);
+                if (!serverIds.has(uploadedRow.id)) {
+                    differences.push({ '1diff': '+', 'title': uploadedRow.nome, 'id': uploadedRow.id, 'lat': uploadedRow.lat, 'lon': uploadedRow.lng, 'stato': stateTranslator[Number(uploadedRow.attiva)], 'date': uploadedRow.data_attivazione, 'technology': uploadedRow.tech_string, 'isManual':false });
+                }
+            });
+            console.log(uploadedIds)
 
             // Find server IDs not present in the uploaded data
             serverData.forEach(serverRow => {
-                if (!uploadedIds.has(serverRow.id)) {
-                    differences.push({ '1diff': '-', 'title': serverRow.nome, 'id': serverRow.id, 'lat': serverRow.lat, 'lon': serverRow.lng, 'stato': stateTranslator[Number(serverRow.attiva)], 'date': serverRow.data_attivazione, 'technology': serverRow.tech_string });
+                if (serverRow.id == 11326){
+                    console.log(`maierato ha serverrowmanual = ${!serverRow.isManual} ${!uploadedIds.has(serverRow.id)}`)
+                }
+                if (!uploadedIds.has(serverRow.id) && !serverRow.isManual) {
+
+                    differences.push({ '1diff': '-', 'title': serverRow.nome, 'id': serverRow.id, 'lat': serverRow.lat, 'lon': serverRow.lng, 'stato': stateTranslator[Number(serverRow.attiva)], 'date': serverRow.data_attivazione, 'technology': serverRow.tech_string, 'isManual':serverRow.isManual });
                 }
             });
 
@@ -415,16 +416,17 @@
         var firstPage3 = false;
 
         // load pending data into table
-        window.onload = async function() {
-            response = await fetch('https://adminapi.zeromist.net/getpending',{method:'GET'})
+        window.onload = async function () {
+            response = await fetch('https://adminapi.zeromist.net/getpending', { method: 'GET' })
             res = await response.json()
-            var t=await insertDataIntoTable(res)
+            var t = await insertDataIntoTable(res)
             //await new Promise(r => setTimeout(r, 500));
-
+            //await sortTable('status');
             await sortTable('name');
+            
         };
 
-        
+
 
         function insertDataIntoTable(data, fromManual = false) {
             const tableBody = document.getElementById('data-table').querySelector('tbody');
@@ -432,13 +434,13 @@
                 tableBody.innerHTML = ''; // Clear existing table data
             }
 
-            data.forEach(async (row) =>  {
+            data.forEach(async (row) => {
                 //console.log(row)
                 idStatus = await apiGetStatus(row['3id'])
                 //console.log(idStatus)
-                if ((Date.now()/1000)-idStatus['lastupdate']>100){
+                if ((Date.now() / 1000) - idStatus['lastupdate'] > 100) {
                     writtenStatus = `${idStatus['status']}*`
-                }else{
+                } else {
                     writtenStatus = idStatus['status']
                 }
                 row = Object.assign(row, { 'status': writtenStatus })
@@ -463,15 +465,15 @@
                 tableBody.appendChild(tr);
                 await sortTable('name');
             });
-            if(!firstPage3){
-                firstPage3= true;
-                var intervalId = window.setInterval(function(){
-                    insertDataIntoTable(data,fromManual)
+            if (!firstPage3) {
+                firstPage3 = true;
+                var intervalId = window.setInterval(function () {
+                    insertDataIntoTable(data, fromManual)
                 }, 100000);
 
             }
             return 0;
-            
+
         }
 
         function editRow(button) {
@@ -546,7 +548,7 @@
 
         async function apiGetStatus(id) {
             var response = await fetch(`https://adminapi.zeromist.net/getbtspendingstatus?id=${id}`, {
-            	method: 'GET'
+                method: 'GET'
             })
             var res = await response.json();
             return res;
@@ -578,10 +580,11 @@
             const arrows = table.querySelectorAll('th span');
             arrows.forEach(arrow => arrow.textContent = '▲');
             //table.querySelector(`th[onclick="sortTable('${column}')"] span`).textContent = isAscending ? '▼' : '▲';
+            
         }
 
         // Initial sort by Name
-        
+
     </script>
 </body>
 
